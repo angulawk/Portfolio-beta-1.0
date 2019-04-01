@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
- <head> 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>AW Portfolio</title>
+  <head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AW Portfolio</title>
 
     <link rel="icon" href="../images/curriculum.png">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="scss/hamburgers.min.css">
-
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/hamburgers.min.css">
   </head> 
-
   <body> 
-
   <!-- Nav section -->
      <nav id="menu" class="clearfix">
       <div class="container">
@@ -22,7 +19,7 @@
             </span>
           </button> 
         <div class="nav_header">
-          <h1 class="sweet-header"><a href="#main-section">WebBerry</a></h1>
+          <h1 class="sweet-header"><a href="#main-section">AWojcik</a></h1>
         </div>
          <ul class="links">
             <li><a href="#main-section" class="menu_link">Home</li>
@@ -33,7 +30,6 @@
           <div class="social_icons">
             <a href="https://github.com/angulawk" target="_blank"><i class="fa fa-github"></i></a>
             <a href="http://codepen.io/agulawk/" target="_blank"><i class="fa fa-codepen"></i></a>
-            <a href="https://www.facebook.com/aga.wojcik.7" target="_blank"><i class="fa fa-facebook"></i></a>
           </div>
         </div>
     </nav>
@@ -45,24 +41,7 @@
       <div class="header_content">
         <h2>Agnieszka Wójcik</h2>
         <a href="#portfolio" class="btn btn-1"><h4>Portfolio</h4></a>
-        <a href="#" class="contact_me_btn"><i class="fa fa-envelope-o"></i></a>
-        <!-- Modal -->
-        <div class="contact_me_modal modal">
-
-          <div class="close_button">
-            <button id="close_me">X</button>
-          </div>
-
-          <h2>Contact with me</h2>
-          
-          <ul>
-            <li>Email address: <a href="mailto:agnieszka.weronika.wojcik@gmail.com">agnieszka.weronika.wojcik@gmail.com</a></li>
-            <li>Phone number: <a href="tel:+48661234865">661-234-865</a></li>
-          </ul>
-
-        </div>
       </div>
-      
     </div>
   </section>
 
@@ -249,7 +228,7 @@
         <img src="images/me.jpg" alt="Picture of myself">
         <div class="description">
           <h5>Hi everyone!</h5>
-          <p>I'm 23-year-old girl from Poland. I'm interested in programming since almost one year. Every day I try to upgrade my skills, and learn something new. Programming is kind of entertainment for me. I'm mac lover. Contact with me, and I promise you will not regret your choice.</p>
+          <p>I'm 25-year-old girl from Poland. I'm interested in programming since over two years. Every day I try to upgrade my skills, and learn something new. Programming is kind of entertainment for me. I'm mac lover. Contact with me, and I promise you will not regret your choice.</p>
         </div>
       </div>
       <div class="skills">
@@ -263,43 +242,21 @@
           <li><img src="images/sass.png" alt="sass picture" width="128px" height="128px"></li>
           <li><img src="images/jquery.png" alt="jquery picture" width="128px" height="128px"></li>
           <li><img src="images/gulp.png" alt="gulp picture" width="128px" height="128px"></li>
-
         </ul>
       </div>
     </div>
   </section>
 
 <!--   Contact me -->
-
 <section id="contact-me">
   <div class="header_content">
-      <h3 class="subpage_header">Contact me.</h3>
+    <h3 class="subpage_header">Contact me.</h3>
     </div>
   <div class="container">
-    <form id="contact-form" class="contact_form" onsubmit="submitForm(); return false;">
-
-      <div class="row">
-        <label for="firstName" class="desc_label">First Name: </label><input type="text" name="firstName" id="firstName" placeholder="First Name">
-      </div>
-        
-      <div class="row">
-        <label for="lastName" class="desc_label">Last Name: </label><input type="text" name="lastName" id="lastName" placeholder="Last Name">
-      </div>
-      
-      <div class="row">
-        <label for="email" class="desc_label">Email: </label><input type="email" name="email" id="email" placeholder="Email">
-      </div>
-      
-      <div class="row">
-        <label for="msg" class="desc_label">Message: </label><textarea name="msg" id="msg" cols="30" rows="10" placeholder="Message"></textarea>
-      </div>
-      
-      <div class="row">
-        <button id="mybtn" type="submit" >Wyślij</button>
-        <span id="status"></span>
-      </div>
-      
-    </form>
+    <ul class="contact_me_box">
+      <li>Email address: <a href="mailto:agnieszka.weronika.wojcik@gmail.com">agnieszka.weronika.wojcik@gmail.com</a></li>
+      <li>Phone number: <a href="tel:+48510434786">510-434-786</a></li>
+    </ul>
   </div>
 </section>
   

@@ -1,0 +1,142 @@
+body {
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.fs_container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.header_content {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h2 {
+    font-family: Canter;
+    font-size: 6rem;
+    line-height: 6rem;
+
+    @media (min-width: 480px) {
+      font-size: 6.5rem;
+    }
+
+    @media (min-width: 600px) {
+      font-size: 7rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 7.5rem;
+    }
+
+    @media (min-width: 900px) {
+      font-size: 8.5rem;
+      line-height: 10rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 9rem;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 10.71rem;
+      line-height: 11rem;
+    }
+  }
+
+  h3 {
+    font-family: Pinstripe;
+    font-size: 4rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+    padding: 75px 0;
+
+    @media (min-width: 480px) {
+      font-size: 4.5rem;
+      line-height: 5rem;
+    }
+
+    @media (min-width: 600px) {
+      font-size: 5rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 6rem;
+    }
+
+    @media (min-width: 900px) {
+      font-size: 6.5rem;
+      line-height: 7rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 7rem;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 8rem;
+      line-height: 8rem;
+    }
+  }
+
+  h4 {
+    font-family: CanterThreeD;
+    font-size: 3.5rem;
+    line-height: 4rem;
+
+    @media (min-width: 480px) {
+      font-size: 3.8rem;
+    }
+
+    @media (min-width: 600px) {
+      font-size: 4rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 4.2rem;
+    }
+
+    @media (min-width: 900px) {
+      font-size: 4.5rem;
+      line-height: 5rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 4.8rem;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 5.36rem;
+      line-height: 6rem;
+    }
+  }
+
+  h6 {
+    font-family: Canter;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    padding: 15px 0;
+
+    @media (min-width: 600px) {
+      font-size: 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+      font-size: 1.8rem;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+  }
+}
