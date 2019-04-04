@@ -371,7 +371,7 @@ nav {
     justify-content: center;
     align-items: center;
     width: 90%;
-    padding: 60px 0;
+    padding-bottom: 60px;
     border: none;
     position: relative; }
     @media (min-width: 480px) {
@@ -452,7 +452,9 @@ nav {
       border-top: 20px solid #dadada;
       margin: 0 auto; }
     #portfolio ul.columns .single_column .more_info .box_info {
-      display: none; }
+      height: 0;
+      overflow: hidden;
+      transition: height 0.5s ease-in; }
       #portfolio ul.columns .single_column .more_info .box_info ul {
         font-family: "Lato", sans-serif;
         font-weight: 300;

@@ -289,7 +289,7 @@ nav {
       justify-content: center;
       align-items: center;
       width: 90%;
-      padding: 60px 0;
+      padding-bottom: 60px;
       border: none;
       position: relative;
 
@@ -396,7 +396,9 @@ nav {
         }
 
         .box_info {
-          display: none;
+          height: 0;
+          overflow: hidden;
+          transition: height 0.5s ease-in;
           ul {
             font-family: "Lato", sans-serif;
             font-weight: 300;
