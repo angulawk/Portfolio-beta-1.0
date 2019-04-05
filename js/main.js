@@ -67,4 +67,42 @@
       item.classList.add("active_link");
     });
   });
+
+  //Timeline animation
+
+  const timelineDots = document.querySelectorAll(".dot");
+
+  for (let index = 0; index < timelineDots.length; index++) {
+    timelineDots[index].addEventListener("click", function() {
+      const lineInsideTimeline = document.querySelector(".inside");
+
+      lineInsideTimeline.style.width = `${(index + 1) * 20}%`;
+    });
+  }
 })();
+
+$(".modal").wrap('<div class="mask"></div>');
+$(".mask").click(function() {
+  $(this).fadeOut(300);
+  $(".mask article").animate(
+    {
+      top: "-100%"
+    },
+    300
+  );
+});
+
+$(".dot").click(function() {
+  var modal = $(this).attr("id");
+  $(".mask")
+    .has("article." + modal)
+    .fadeIn(300);
+  $(".mask article." + modal)
+    .fadeIn(0)
+    .animate(
+      {
+        top: "10%"
+      },
+      300
+    );
+});
