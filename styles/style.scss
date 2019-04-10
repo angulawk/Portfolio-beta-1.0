@@ -1,6 +1,6 @@
+@import "reset";
 @import "vars";
 @import "fonts";
-@import "reset";
 @import "layout";
 @import "animations";
 
@@ -597,7 +597,23 @@ div#timeline {
   }
 }
 
-article {
+#workplaces_2016 {
+  display: flex;
+  justify-content: space-evenly;
+
+  .workplace_name {
+    cursor: pointer;
+  }
+}
+.workplace_description {
+  display: none;
+}
+
+.active_workplace_description {
+  display: block;
+}
+
+.modal_content {
   display: none;
   position: relative;
   top: 30px;
@@ -622,7 +638,7 @@ article {
 }
 
 // Contact me
-#contact-me {
+#contact-me { //TODO remove form styles
   .contact_form {
     margin: 0 auto 120px auto;
     width: 70%;

@@ -1,18 +1,6 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700");
-@font-face {
-  font-family: Canter;
-  src: url("../fonts/Canter Light.otf"); }
-@font-face {
-  font-family: CanterThreeD;
-  src: url("../fonts/Canter Bold 3D.otf"); }
-@font-face {
-  font-family: Pinstripe;
-  src: url("../fonts/Pinstripe Limo.ttf"); }
-@font-face {
-  font-family: Gill;
-  src: url("../fonts/GillSans.ttc"); }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,6 +44,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: Canter;
+  src: url("../fonts/Canter Light.otf"); }
+@font-face {
+  font-family: CanterThreeD;
+  src: url("../fonts/Canter Bold 3D.otf"); }
+@font-face {
+  font-family: Pinstripe;
+  src: url("../fonts/Pinstripe Limo.ttf"); }
+@font-face {
+  font-family: Gill;
+  src: url("../fonts/GillSans.ttc"); }
 body {
   font-size: 14px; }
 
@@ -74,110 +74,114 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center; }
-  .header_content h2 {
-    font-family: Canter;
-    font-size: 6rem;
-    line-height: 6rem; }
-    @media (min-width: 480px) {
-      .header_content h2 {
-        font-size: 6.5rem;
-        line-height: 6.5rem; } }
-    @media (min-width: 600px) {
-      .header_content h2 {
-        font-size: 7rem;
-        line-height: 7rem; } }
-    @media (min-width: 768px) {
-      .header_content h2 {
-        font-size: 7.5rem;
-        line-height: 7.5rem; } }
-    @media (min-width: 900px) {
-      .header_content h2 {
-        font-size: 8.5rem;
-        line-height: 8.5rem; } }
-    @media (min-width: 1024px) {
-      .header_content h2 {
-        font-size: 9rem;
-        line-height: 9rem; } }
-    @media (min-width: 1440px) {
-      .header_content h2 {
-        font-size: 10.5rem;
-        line-height: 10.5rem; } }
-  .header_content h3 {
-    font-family: Pinstripe;
-    font-size: 4rem;
-    line-height: 4rem;
-    text-transform: uppercase;
-    padding: 75px 0; }
-    @media (min-width: 480px) {
-      .header_content h3 {
-        font-size: 4.5rem;
-        line-height: 4.5rem; } }
-    @media (min-width: 600px) {
-      .header_content h3 {
-        font-size: 5rem;
-        line-height: 5rem; } }
-    @media (min-width: 768px) {
-      .header_content h3 {
-        font-size: 6rem;
-        line-height: 6rem; } }
-    @media (min-width: 900px) {
-      .header_content h3 {
-        font-size: 6.5rem;
-        line-height: 6.5rem; } }
-    @media (min-width: 1024px) {
-      .header_content h3 {
-        font-size: 7rem;
-        font-size: 7rem; } }
-    @media (min-width: 1440px) {
-      .header_content h3 {
-        font-size: 8rem;
-        line-height: 8rem; } }
-  .header_content h4 {
-    font-family: CanterThreeD;
-    font-size: 3.5rem;
-    line-height: 3.5rem; }
-    @media (min-width: 480px) {
-      .header_content h4 {
-        font-size: 3.8rem;
-        line-height: 3.8rem; } }
-    @media (min-width: 600px) {
-      .header_content h4 {
-        font-size: 4rem;
-        line-height: 4rem; } }
-    @media (min-width: 768px) {
-      .header_content h4 {
-        font-size: 4.2rem;
-        line-height: 4.2rem; } }
-    @media (min-width: 900px) {
-      .header_content h4 {
-        font-size: 4.5rem;
-        line-height: 4.5rem; } }
-    @media (min-width: 1024px) {
-      .header_content h4 {
-        font-size: 4.8rem;
-        line-height: 4.8rem; } }
-    @media (min-width: 1440px) {
-      .header_content h4 {
-        font-size: 5.2rem;
-        line-height: 5.2rem; } }
-  .header_content h6 {
-    font-family: Canter;
-    font-size: 1.3rem;
-    line-height: 1.3rem;
-    letter-spacing: 1px;
-    padding: 15px 0; }
-    @media (min-width: 600px) {
-      .header_content h6 {
-        font-size: 1.5rem;
-        line-height: 1.5rem; } }
-    @media (min-width: 900px) {
-      .header_content h6 {
-        font-size: 1.8rem;
-        line-height: 1.8rem; } }
-    @media (min-width: 1440px) {
-      .header_content h6 {
-        font-size: 2rem;
-        line-height: 2rem; } }
+
+h2 {
+  font-family: Canter;
+  font-size: 6rem;
+  line-height: 6rem; }
+  @media (min-width: 480px) {
+    h2 {
+      font-size: 6.5rem;
+      line-height: 6.5rem; } }
+  @media (min-width: 600px) {
+    h2 {
+      font-size: 7rem;
+      line-height: 7rem; } }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 7.5rem;
+      line-height: 7.5rem; } }
+  @media (min-width: 900px) {
+    h2 {
+      font-size: 8.5rem;
+      line-height: 8.5rem; } }
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 9rem;
+      line-height: 9rem; } }
+  @media (min-width: 1440px) {
+    h2 {
+      font-size: 10.5rem;
+      line-height: 10.5rem; } }
+
+h3 {
+  font-family: Pinstripe;
+  font-size: 4rem;
+  line-height: 4rem;
+  text-transform: uppercase;
+  padding: 75px 0; }
+  @media (min-width: 480px) {
+    h3 {
+      font-size: 4.5rem;
+      line-height: 4.5rem; } }
+  @media (min-width: 600px) {
+    h3 {
+      font-size: 5rem;
+      line-height: 5rem; } }
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 6rem;
+      line-height: 6rem; } }
+  @media (min-width: 900px) {
+    h3 {
+      font-size: 6.5rem;
+      line-height: 6.5rem; } }
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 7rem;
+      font-size: 7rem; } }
+  @media (min-width: 1440px) {
+    h3 {
+      font-size: 8rem;
+      line-height: 8rem; } }
+
+h4 {
+  font-family: CanterThreeD;
+  font-size: 3.5rem;
+  line-height: 3.5rem; }
+  @media (min-width: 480px) {
+    h4 {
+      font-size: 3.8rem;
+      line-height: 3.8rem; } }
+  @media (min-width: 600px) {
+    h4 {
+      font-size: 4rem;
+      line-height: 4rem; } }
+  @media (min-width: 768px) {
+    h4 {
+      font-size: 4.2rem;
+      line-height: 4.2rem; } }
+  @media (min-width: 900px) {
+    h4 {
+      font-size: 4.5rem;
+      line-height: 4.5rem; } }
+  @media (min-width: 1024px) {
+    h4 {
+      font-size: 4.8rem;
+      line-height: 4.8rem; } }
+  @media (min-width: 1440px) {
+    h4 {
+      font-size: 5.2rem;
+      line-height: 5.2rem; } }
+
+h6 {
+  font-family: Canter;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  letter-spacing: 1px;
+  padding: 15px 0; }
+  @media (min-width: 600px) {
+    h6 {
+      font-size: 1.5rem;
+      line-height: 1.5rem; } }
+  @media (min-width: 900px) {
+    h6 {
+      font-size: 1.8rem;
+      line-height: 1.8rem; } }
+  @media (min-width: 1440px) {
+    h6 {
+      font-size: 2rem;
+      line-height: 2rem; } }
 
 @keyframes smoothScroll {
   0% {
@@ -611,7 +615,19 @@ div#timeline {
       border-radius: 50%;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
 
-article {
+#workplaces_2016 {
+  display: flex;
+  justify-content: space-evenly; }
+  #workplaces_2016 .workplace_name {
+    cursor: pointer; }
+
+.workplace_description {
+  display: none; }
+
+.active_workplace_description {
+  display: block; }
+
+.modal_content {
   display: none;
   position: relative;
   top: 30px;
@@ -619,16 +635,16 @@ article {
   background-color: #fff;
   padding: 20px;
   margin: auto; }
-  article date {
+  .modal_content date {
     display: block;
     text-align: right; }
-  article h2 {
+  .modal_content h2 {
     font-family: merriweather, sans-serif;
     font-size: 5rem;
     padding: 10px 0;
     border-bottom: solid #111 2px;
     margin-bottom: 20px; }
-  article p {
+  .modal_content p {
     line-height: 130%; }
 
 #contact-me .contact_form {
@@ -709,6 +725,9 @@ article {
     width: 95%;
     text-align: right;
     padding-top: 10px; }
+    @media (min-width: 768px) {
+      #contact-me .contact_form label.error {
+        width: 80%; } }
 #contact-me .contact_me_box {
   font-family: "Lato", sans-serif;
   width: 350px;
