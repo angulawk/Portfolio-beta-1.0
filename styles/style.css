@@ -1,18 +1,6 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700");
-@font-face {
-  font-family: Canter;
-  src: url("../fonts/Canter Light.otf"); }
-@font-face {
-  font-family: CanterThreeD;
-  src: url("../fonts/Canter Bold 3D.otf"); }
-@font-face {
-  font-family: Pinstripe;
-  src: url("../fonts/Pinstripe Limo.ttf"); }
-@font-face {
-  font-family: Gill;
-  src: url("../fonts/GillSans.ttc"); }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,6 +44,27 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+button, input[type="submit"], input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit; }
+
+@font-face {
+  font-family: Canter;
+  src: url("../fonts/Canter Light.otf"); }
+@font-face {
+  font-family: CanterThreeD;
+  src: url("../fonts/Canter Bold 3D.otf"); }
+@font-face {
+  font-family: Pinstripe;
+  src: url("../fonts/Pinstripe Limo.ttf"); }
+@font-face {
+  font-family: Gill;
+  src: url("../fonts/GillSans.ttc"); }
 body {
   font-size: 14px; }
 
@@ -74,110 +83,114 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center; }
-  .header_content h2 {
-    font-family: Canter;
-    font-size: 6rem;
-    line-height: 6rem; }
-    @media (min-width: 480px) {
-      .header_content h2 {
-        font-size: 6.5rem;
-        line-height: 6.5rem; } }
-    @media (min-width: 600px) {
-      .header_content h2 {
-        font-size: 7rem;
-        line-height: 7rem; } }
-    @media (min-width: 768px) {
-      .header_content h2 {
-        font-size: 7.5rem;
-        line-height: 7.5rem; } }
-    @media (min-width: 900px) {
-      .header_content h2 {
-        font-size: 8.5rem;
-        line-height: 8.5rem; } }
-    @media (min-width: 1024px) {
-      .header_content h2 {
-        font-size: 9rem;
-        line-height: 9rem; } }
-    @media (min-width: 1440px) {
-      .header_content h2 {
-        font-size: 10.5rem;
-        line-height: 10.5rem; } }
-  .header_content h3 {
-    font-family: Pinstripe;
-    font-size: 4rem;
-    line-height: 4rem;
-    text-transform: uppercase;
-    padding: 75px 0; }
-    @media (min-width: 480px) {
-      .header_content h3 {
-        font-size: 4.5rem;
-        line-height: 4.5rem; } }
-    @media (min-width: 600px) {
-      .header_content h3 {
-        font-size: 5rem;
-        line-height: 5rem; } }
-    @media (min-width: 768px) {
-      .header_content h3 {
-        font-size: 6rem;
-        line-height: 6rem; } }
-    @media (min-width: 900px) {
-      .header_content h3 {
-        font-size: 6.5rem;
-        line-height: 6.5rem; } }
-    @media (min-width: 1024px) {
-      .header_content h3 {
-        font-size: 7rem;
-        font-size: 7rem; } }
-    @media (min-width: 1440px) {
-      .header_content h3 {
-        font-size: 8rem;
-        line-height: 8rem; } }
-  .header_content h4 {
-    font-family: CanterThreeD;
-    font-size: 3.5rem;
-    line-height: 3.5rem; }
-    @media (min-width: 480px) {
-      .header_content h4 {
-        font-size: 3.8rem;
-        line-height: 3.8rem; } }
-    @media (min-width: 600px) {
-      .header_content h4 {
-        font-size: 4rem;
-        line-height: 4rem; } }
-    @media (min-width: 768px) {
-      .header_content h4 {
-        font-size: 4.2rem;
-        line-height: 4.2rem; } }
-    @media (min-width: 900px) {
-      .header_content h4 {
-        font-size: 4.5rem;
-        line-height: 4.5rem; } }
-    @media (min-width: 1024px) {
-      .header_content h4 {
-        font-size: 4.8rem;
-        line-height: 4.8rem; } }
-    @media (min-width: 1440px) {
-      .header_content h4 {
-        font-size: 5.2rem;
-        line-height: 5.2rem; } }
-  .header_content h6 {
-    font-family: Canter;
-    font-size: 1.3rem;
-    line-height: 1.3rem;
-    letter-spacing: 1px;
-    padding: 15px 0; }
-    @media (min-width: 600px) {
-      .header_content h6 {
-        font-size: 1.5rem;
-        line-height: 1.5rem; } }
-    @media (min-width: 900px) {
-      .header_content h6 {
-        font-size: 1.8rem;
-        line-height: 1.8rem; } }
-    @media (min-width: 1440px) {
-      .header_content h6 {
-        font-size: 2rem;
-        line-height: 2rem; } }
+
+h2 {
+  font-family: Canter;
+  font-size: 6rem;
+  line-height: 6rem; }
+  @media (min-width: 480px) {
+    h2 {
+      font-size: 6.5rem;
+      line-height: 6.5rem; } }
+  @media (min-width: 600px) {
+    h2 {
+      font-size: 7rem;
+      line-height: 7rem; } }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 7.5rem;
+      line-height: 7.5rem; } }
+  @media (min-width: 900px) {
+    h2 {
+      font-size: 8.5rem;
+      line-height: 8.5rem; } }
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 9rem;
+      line-height: 9rem; } }
+  @media (min-width: 1440px) {
+    h2 {
+      font-size: 10.5rem;
+      line-height: 10.5rem; } }
+
+h3 {
+  font-family: Pinstripe;
+  font-size: 4rem;
+  line-height: 4rem;
+  text-transform: uppercase;
+  padding: 75px 0; }
+  @media (min-width: 480px) {
+    h3 {
+      font-size: 4.5rem;
+      line-height: 4.5rem; } }
+  @media (min-width: 600px) {
+    h3 {
+      font-size: 5rem;
+      line-height: 5rem; } }
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 6rem;
+      line-height: 6rem; } }
+  @media (min-width: 900px) {
+    h3 {
+      font-size: 6.5rem;
+      line-height: 6.5rem; } }
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 7rem;
+      font-size: 7rem; } }
+  @media (min-width: 1440px) {
+    h3 {
+      font-size: 8rem;
+      line-height: 8rem; } }
+
+h4 {
+  font-family: CanterThreeD;
+  font-size: 3.5rem;
+  line-height: 3.5rem; }
+  @media (min-width: 480px) {
+    h4 {
+      font-size: 3.8rem;
+      line-height: 3.8rem; } }
+  @media (min-width: 600px) {
+    h4 {
+      font-size: 4rem;
+      line-height: 4rem; } }
+  @media (min-width: 768px) {
+    h4 {
+      font-size: 4.2rem;
+      line-height: 4.2rem; } }
+  @media (min-width: 900px) {
+    h4 {
+      font-size: 4.5rem;
+      line-height: 4.5rem; } }
+  @media (min-width: 1024px) {
+    h4 {
+      font-size: 4.8rem;
+      line-height: 4.8rem; } }
+  @media (min-width: 1440px) {
+    h4 {
+      font-size: 5.2rem;
+      line-height: 5.2rem; } }
+
+h6 {
+  font-family: Canter;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  letter-spacing: 1px;
+  padding: 15px 0; }
+  @media (min-width: 600px) {
+    h6 {
+      font-size: 1.5rem;
+      line-height: 1.5rem; } }
+  @media (min-width: 900px) {
+    h6 {
+      font-size: 1.8rem;
+      line-height: 1.8rem; } }
+  @media (min-width: 1440px) {
+    h6 {
+      font-size: 2rem;
+      line-height: 2rem; } }
 
 @keyframes smoothScroll {
   0% {
@@ -186,9 +199,6 @@ body {
     transform: translateY(0px); } }
 html {
   scroll-behavior: smooth; }
-
-body {
-  font-size: 14px; }
 
 .contact_me_btn {
   font-size: 44px;
@@ -300,78 +310,6 @@ nav {
         @media (min-width: 900px) {
           nav .social_icons a i {
             padding-right: 27px; } }
-
-#main-section {
-  background: url("../images/bg.jpg") center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-  position: relative; }
-  #main-section .layer {
-    background-color: rgba(255, 255, 255, 0.85);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
-  #main-section .btn {
-    color: #fff;
-    cursor: pointer;
-    max-width: 233px;
-    position: relative;
-    text-decoration: none;
-    text-transform: uppercase;
-    vertical-align: middle;
-    width: 100%;
-    text-align: center; }
-    @media (min-width: 400px) {
-      #main-section .btn {
-        display: inline-block;
-        max-width: 245px; }
-        #main-section .btn:nth-of-type(even) {
-          margin-right: 0; } }
-    @media (min-width: 600px) {
-      #main-section .btn:nth-of-type(even) {
-        margin-right: 2.5em; }
-      #main-section .btn:nth-of-type(5) {
-        margin-right: 0; } }
-    #main-section .btn:hover {
-      text-decoration: none; }
-  #main-section .btn-1:after,
-  #main-section .btn-1:before {
-    backface-visibility: hidden;
-    border: 1px solid rgba(255, 255, 255, 0);
-    bottom: 0px;
-    content: "";
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    transition: all 280ms ease-in-out;
-    width: 0; }
-  #main-section .btn-1:hover:after,
-  #main-section .btn-1:hover:before {
-    backface-visibility: hidden;
-    border-color: #272626;
-    transition: width 350ms ease-in-out;
-    width: 100%; }
-  #main-section .btn-1:hover:before {
-    bottom: 0;
-    top: 0;
-    width: 100%; }
-  #main-section .header_content {
-    position: relative;
-    z-index: 998;
-    height: 100vh; }
-    #main-section .header_content h2 {
-      margin-bottom: 55px;
-      text-align: center; }
-    #main-section .header_content h4 {
-      margin: 10px 0;
-      color: #272626; }
-    #main-section .header_content a {
-      text-decoration: none;
-      cursor: pointer; }
 
 #portfolio ul.columns {
   display: flex;
@@ -533,28 +471,59 @@ nav {
       @media (min-width: 900px) {
         #about-me .main_info .description p {
           font-size: 1.1rem; } }
-#about-me .skills ul {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
-  margin: 50px 0px; }
-  @media (min-width: 600px) {
-    #about-me .skills ul {
-      flex-flow: row wrap; } }
-  #about-me .skills ul li {
-    margin-bottom: 20px;
+#about-me table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  -webkit-box-shadow: 0px 7px 6px -6px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 0px 7px 6px -6px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 7px 6px -6px rgba(0, 0, 0, 0.28);
+  margin-bottom: 40px;
+  margin-top: .5em;
+  width: 100%;
+  max-width: 100%; }
+  #about-me table thead tr {
+    border-bottom: 3px solid #0085a6;
+    color: #000; }
+  #about-me table tbody tr {
+    border-top: 3px solid #0085a6;
+    background-color: #fff; }
+    #about-me table tbody tr:hover {
+      background-color: red;
+      transition: all .3s linear; }
+  #about-me table thead tr, #about-me table tbody tr {
+    display: flex; }
+  #about-me table thead td, #about-me table thead th, #about-me table tbody td, #about-me table tbody th {
     display: flex;
-    justify-content: center; }
-    @media (min-width: 600px) {
-      #about-me .skills ul li {
-        width: 30%; } }
-    @media (min-width: 1024px) {
-      #about-me .skills ul li {
-        width: 20%; } }
-    @media (min-width: 1440px) {
-      #about-me .skills ul li {
-        width: 10%; } }
+    justify-content: center;
+    flex: 1; }
+  #about-me table thead th, #about-me table tbody th {
+    background-color: #fff;
+    color: #000;
+    font-size: .83333em;
+    line-height: 1.8;
+    padding: 15px 14px 13px 14px;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase; }
+    #about-me table thead th:hover, #about-me table tbody th:hover {
+      background-color: #eee;
+      color: #000; }
+  #about-me table th, #about-me table td {
+    border: 1px solid #bfbfbf;
+    padding: 10px 14px;
+    position: relative;
+    vertical-align: middle; }
+  #about-me table .sort-table-arrows {
+    margin-left: 10px; }
+@media (max-width: 1024px) {
+  #about-me table {
+    font-size: .944444em; } }
+@media (max-width: 767px) {
+  #about-me table {
+    font-size: 1em; } }
+#about-me .skills_slider {
+  overflow: hidden;
+  position: relative; }
 
 div#timeline {
   background-color: #6ab0de;
@@ -611,7 +580,16 @@ div#timeline {
       border-radius: 50%;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
 
-article {
+#workplaces_2016 {
+  display: flex;
+  justify-content: space-evenly; }
+  #workplaces_2016 .workplace_name {
+    cursor: pointer; }
+
+.workplace_description {
+  display: none; }
+
+.modal_content {
   display: none;
   position: relative;
   top: 30px;
@@ -619,17 +597,20 @@ article {
   background-color: #fff;
   padding: 20px;
   margin: auto; }
-  article date {
+  .modal_content date {
     display: block;
     text-align: right; }
-  article h2 {
+  .modal_content h2 {
     font-family: merriweather, sans-serif;
     font-size: 5rem;
     padding: 10px 0;
     border-bottom: solid #111 2px;
     margin-bottom: 20px; }
-  article p {
+  .modal_content p {
     line-height: 130%; }
+
+.active_workplace_description, .active_article {
+  display: block; }
 
 #contact-me .contact_form {
   margin: 0 auto 120px auto;
@@ -709,6 +690,9 @@ article {
     width: 95%;
     text-align: right;
     padding-top: 10px; }
+    @media (min-width: 768px) {
+      #contact-me .contact_form label.error {
+        width: 80%; } }
 #contact-me .contact_me_box {
   font-family: "Lato", sans-serif;
   width: 350px;
@@ -731,4 +715,4 @@ article {
     text-transform: lowercase;
     color: #272626; }
 
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=style.css.map */

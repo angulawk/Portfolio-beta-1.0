@@ -1,4 +1,6 @@
 import { showElementOnClick } from "./helpers/show-element-on-click.js";
+import { sortTable, sortNumber } from "./helpers/sort-table.js";
+import { arrayToSort } from "./helpers/array-to-sort.js";
 
 (function () {
   //Toggle navigation
@@ -50,7 +52,7 @@ import { showElementOnClick } from "./helpers/show-element-on-click.js";
 
   window.addEventListener("scroll", function (e) {
     const menu = document.querySelector("#menu");
-    if (window.scrollY > window.innerHeight / 2) {
+    if (window.scrollY > menu.clientHeight) {
       menu.classList.add("fixed");
     } else {
       menu.classList.remove("fixed");
@@ -70,28 +72,12 @@ import { showElementOnClick } from "./helpers/show-element-on-click.js";
     });
   });
 
-  // function showElementOnClick(arrayOfLinks, content, insideElement = false) {
-  //   for (let index = 0; index < arrayOfLinks.length; index++) {
-  //     arrayOfLinks[index].addEventListener("click", function () {
-  //       content.forEach(function (element) {
-  //         element.style.display = "none";
-  //       });
-
-  //       if (insideElement) {
-  //         const lineInsideTimeline = document.querySelector(".inside");
-  //         lineInsideTimeline.style.width = `${(index + 1) * 20}%`;
-  //       }
-  //       content[index].style.display = "block";
-  //     });
-  //   }
-  // }
-
   //Timeline animation
 
   const timelineDots = document.querySelectorAll(".dot");
   const modalContent = document.querySelectorAll(".modal_content");
 
-  showElementOnClick(timelineDots, modalContent), true;
+  showElementOnClick(timelineDots, modalContent, true);
 
   //Workplace click
 
@@ -99,4 +85,82 @@ import { showElementOnClick } from "./helpers/show-element-on-click.js";
   const workplaceDescription = document.querySelectorAll(".workplace_description");
 
   showElementOnClick(workplaceName, workplaceDescription);
+
+  const experienceSort = document.querySelector(".experience_sort");
+  const technologySort = document.querySelector(".technology_sort");
+  const experienceArrowIcon = document.querySelector(".experience_sort .sort_direction i");
+  const technologyArrowIcon = document.querySelector(".technology_sort .sort_direction i");
+  var comparisonSign = "asc";
+
+  function sortNameColumn(arrayToSort, experienceTime, technologyName, comparisonSign) {
+    sortTable("name", arrayToSort, comparisonSign);
+    for (let i = 0; i < arrayToSort.length; i++) {
+      for (let j = 0; j < experienceTime.length; j++) {
+        if (j === i) {
+          experienceTime[j].innerHTML = `${arrayToSort[i].experience} years`;
+        }
+      }
+
+      for (let k = 0; k < technologyName.length; k++) {
+        if (k === i) {
+          technologyName[k].src = `images/${arrayToSort[i].name}.png`;
+
+          if (comparisonSign === "asc") {
+            technologyArrowIcon.classList.remove("fa-chevron-down");
+            technologyArrowIcon.classList.add("fa-chevron-up");
+          } else {
+            technologyArrowIcon.classList.remove("fa-chevron-up");
+            technologyArrowIcon.classList.add("fa-chevron-down");
+          }
+        }
+      }
+    }
+  }
+
+  function sortExperienceColumn(arrayToSort, experienceTime, technologyName, comparisonSign) {
+    sortNumber("experience", arrayToSort, comparisonSign);
+
+    for (let i = 0; i < arrayToSort.length; i++) {
+      for (let j = 0; j < experienceTime.length; j++) {
+        if (j === i) {
+          experienceTime[j].innerHTML = `${arrayToSort[i].experience} years`;
+
+          if (comparisonSign === "asc") {
+            experienceArrowIcon.classList.remove("fa-chevron-down");
+            experienceArrowIcon.classList.add("fa-chevron-up");
+          } else {
+            experienceArrowIcon.classList.remove("fa-chevron-up");
+            experienceArrowIcon.classList.add("fa-chevron-down");
+          }
+        }
+      }
+
+      for (let k = 0; k < technologyName.length; k++) {
+        if (k === i) {
+          technologyName[k].src = `images/${arrayToSort[i].name}.png`;
+        }
+      }
+    }
+  }
+
+  const experienceTime = document.querySelectorAll(".experience_time");
+  const technologyName = document.querySelectorAll(".technology_name");
+
+  async function sortArrayOnClick(sortArrFunction, keyToCompare) {
+    if (comparisonSign === "asc") {
+      await sortArrFunction(arrayToSort, experienceTime, technologyName, "asc", keyToCompare);
+      comparisonSign = "desc";
+    } else {
+      await sortArrFunction(arrayToSort, experienceTime, technologyName, "desc", keyToCompare);
+      comparisonSign = "asc";
+    }
+  }
+
+  experienceSort.addEventListener("click", () => {
+    sortArrayOnClick(sortExperienceColumn, "experience");
+  });
+
+  technologySort.addEventListener("click", () => {
+    sortArrayOnClick(sortNameColumn, "name");
+  });
 })();

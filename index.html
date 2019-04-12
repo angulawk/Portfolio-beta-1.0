@@ -9,7 +9,7 @@
   <title>AW Portfolio</title>
 
   <link rel="icon" href="images/curriculum.png">
-  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="styles/hamburgers.min.css">
 </head>
 
@@ -26,10 +26,10 @@
         <h1 class="sweet-header"><a href="#main-section">AWojcik</a></h1>
       </div>
       <ul class="links">
-        <li><a href="#main-section" class="menu_link">Home</a></li>
         <li><a href="#portfolio" class="menu_link">Portfolio</a></li>
         <li><a href="#about-me" class="menu_link">About</a></li>
         <li><a href="#contact-me" class="menu_link">Contact</a></li>
+        <li><a href="#main-section" class="menu_link">My CV</a></li>
       </ul>
       <div class="social_icons">
         <a href="https://github.com/angulawk" target="_blank"><i class="fa fa-github"></i></a>
@@ -37,19 +37,6 @@
       </div>
     </div>
   </nav>
-
-  <!--  Main section -->
-  <section id="main-section" class="fs_container">
-    <div class="fs_container">
-      <div class="layer"></div>
-      <div class="header_content">
-        <h2>Agnieszka Wójcik</h2>
-        <a href="#portfolio" class="btn btn-1">
-          <h4>Portfolio</h4>
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- Portfolio section -->
   <section id="portfolio">
@@ -239,20 +226,52 @@
             Contact with me, and I promise you will not regret your choice.</p>
         </div>
       </div>
-      <div class="skills">
-        <ul>
-          <li><img src="images/html.png" alt="html picture"></li>
-          <li><img src="images/css.png" alt="css picture"></li>
-          <li><img src="images/github.png" alt="github picture"></li>
-          <li><img src="images/js.png" alt="js picture"></li>
-          <li><img src="images/ps.png" alt="ps picture"></li>
-          <li><img src="images/wp.png" alt="wp picture"></li>
-          <li><img src="images/sass.png" alt="sass picture" width="128px" height="128px"></li>
-          <li><img src="images/jquery.png" alt="jquery picture" width="128px" height="128px"></li>
-          <li><img src="images/gulp.png" alt="gulp picture" width="128px" height="128px"></li>
-        </ul>
-      </div>
+      <table id="technology-stack-table" class="technology_stack sort_table">
+        <thead>
+          <tr>
+            <th class="title">Technology
+              <div class="sort-table-arrows">
+                <a class="technology_sort">
+                  <button class="sort_direction" title="Technology">
+                    <i class="fa fa-chevron-down"></i>
+                  </button>
+                </a>
+              </div>
+            </th>
+            <th class="composer">Experience
+              <div class="sort-table-arrows">
+                <a class="experience_sort">
+                  <button class="sort_direction" title="Experience">
+                    <i class="fa fa-chevron-down"></i>
+                  </button>
+                </a>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Css" class="title">
+              <img src="images/css.png" class="technology_name" alt="css picture">
+            </td>
+            <td class="experience_time">2 years</td>
+          </tr>
+          <tr>
+            <td data-label="technology_name" class="title">
+              <img src="images/html.png" class="technology_name" alt="html picture">
+            </td>
+            <td class="experience_time">3 years</td>
+          </tr>
+          <tr>
+            <td data-label="technology_name" class="title">
+              <img src="images/bootstrap.png" class="technology_name" alt="bootstrap picture">
+            </td>
+            <td class="experience_time">10 years</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
   </section>
 
   <!-- Section Experience -->
@@ -285,7 +304,7 @@
 
   <!-- Modals -->
 
-  <article class="modal_content">
+  <article class="modal_content active_article">
     <div id="workplaces_2016">
       <h6>
         <a class="workplace_name">Junior Front-End Developer Course</a>
