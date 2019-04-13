@@ -50,3 +50,6 @@ button, input[type="submit"], input[type="reset"] {
 	cursor: pointer;
 	outline: inherit;
 }
+a {
+	text-decoration: none; /* no underline */
+}

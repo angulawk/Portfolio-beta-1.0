@@ -86,8 +86,8 @@ import { arrayToSort } from "./helpers/array-to-sort.js";
 
   showElementOnClick(workplaceName, workplaceDescription);
 
-  const experienceSort = document.querySelector(".experience_sort");
-  const technologySort = document.querySelector(".technology_sort");
+  const experience = document.querySelector(".experience");
+  const technology = document.querySelector(".technology");
   const experienceArrowIcon = document.querySelector(".experience_sort .sort_direction i");
   const technologyArrowIcon = document.querySelector(".technology_sort .sort_direction i");
   var comparisonSign = "asc";
@@ -106,11 +106,11 @@ import { arrayToSort } from "./helpers/array-to-sort.js";
           technologyName[k].src = `images/${arrayToSort[i].name}.png`;
 
           if (comparisonSign === "asc") {
-            technologyArrowIcon.classList.remove("fa-chevron-down");
-            technologyArrowIcon.classList.add("fa-chevron-up");
+            technologyArrowIcon.classList.remove("fa-angle-down");
+            technologyArrowIcon.classList.add("fa-angle-up");
           } else {
-            technologyArrowIcon.classList.remove("fa-chevron-up");
-            technologyArrowIcon.classList.add("fa-chevron-down");
+            technologyArrowIcon.classList.remove("fa-angle-up");
+            technologyArrowIcon.classList.add("fa-angle-down");
           }
         }
       }
@@ -126,11 +126,11 @@ import { arrayToSort } from "./helpers/array-to-sort.js";
           experienceTime[j].innerHTML = `${arrayToSort[i].experience} years`;
 
           if (comparisonSign === "asc") {
-            experienceArrowIcon.classList.remove("fa-chevron-down");
-            experienceArrowIcon.classList.add("fa-chevron-up");
+            experienceArrowIcon.classList.remove("fa-angle-down");
+            experienceArrowIcon.classList.add("fa-angle-up");
           } else {
-            experienceArrowIcon.classList.remove("fa-chevron-up");
-            experienceArrowIcon.classList.add("fa-chevron-down");
+            experienceArrowIcon.classList.remove("fa-angle-up");
+            experienceArrowIcon.classList.add("fa-angle-down");
           }
         }
       }
@@ -156,11 +156,11 @@ import { arrayToSort } from "./helpers/array-to-sort.js";
     }
   }
 
-  experienceSort.addEventListener("click", () => {
+  experience.addEventListener("click", () => {
     sortArrayOnClick(sortExperienceColumn, "experience");
   });
 
-  technologySort.addEventListener("click", () => {
+  technology.addEventListener("click", () => {
     sortArrayOnClick(sortNameColumn, "name");
   });
 })();
