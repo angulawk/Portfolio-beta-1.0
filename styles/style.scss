@@ -728,10 +728,20 @@ div#timeline {
      animation: hideEnvelopeBottom 1000ms ease-in-out forwards;
    }
 
+   .hide_envelope_bottom {
+     animation: moveEnvelopeTop 800ms ease-in-out forwards;
+     animation-delay: 900ms;
+   }
+
    .show_envelope_bottom::before {
      border-bottom: 0vh solid #546e7a;
      animation: showEnvelopeBottom 1000ms ease-in-out forwards;
      animation-delay: 4000ms;
+   }
+
+   .show_envelope_bottom {
+     animation: moveEnvelopeBottom 800ms ease-in-out forwards;
+     animation-delay: 3000ms;
    }
 
    .envelope_box {
@@ -822,5 +832,12 @@ div#timeline {
       text-transform: lowercase;
       color: $darkgray;
     }
+  }
+
+  .close_envelope {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
   }
 }

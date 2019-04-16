@@ -1,11 +1,11 @@
 export const arrayToSort = [
   {
     name: "CSS",
-    experience: 20
+    experience: 1
   },
   {
     name: "HTML",
-    experience: 3
+    experience: 2
   },
   {
     name: "Bootstrap",

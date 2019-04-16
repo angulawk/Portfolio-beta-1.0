@@ -86,82 +86,71 @@ import { arrayToSort } from "./helpers/array-to-sort.js";
 
   showElementOnClick(workplaceName, workplaceDescription);
 
+  //Sort array
+
+  let order = "desc";
+  const sortDirectionIcon = document.querySelector(".sort_direction_icon");
+  const sortableRow = document.querySelectorAll(".sortable_row");
+
+  const technologyNameSort = document.querySelector(".technology_name_sort .sort_direction_icon");
+  const experienceSort = document.querySelector(".experience_sort .sort_direction_icon");
+
+  const technologyName = document.querySelector(".technology_name");
   const experience = document.querySelector(".experience");
-  const technology = document.querySelector(".technology");
-  const experienceArrowIcon = document.querySelector(".experience_sort .sort_direction i");
-  const technologyArrowIcon = document.querySelector(".technology_sort .sort_direction i");
-  var comparisonSign = "asc";
+  let direction = order === "asc" ? "up" : "down";
+  sortRow(order, "name");
 
-  function sortNameColumn(arrayToSort, experienceTime, technologyName, comparisonSign) {
-    sortTable("name", arrayToSort, comparisonSign);
-    for (let i = 0; i < arrayToSort.length; i++) {
-      for (let j = 0; j < experienceTime.length; j++) {
-        if (j === i) {
-          experienceTime[j].innerHTML = `${arrayToSort[i].experience} years`;
-        }
-      }
-
-      for (let k = 0; k < technologyName.length; k++) {
-        if (k === i) {
-          technologyName[k].src = `images/${arrayToSort[i].name}.png`;
-
-          if (comparisonSign === "asc") {
-            technologyArrowIcon.classList.remove("fa-angle-down");
-            technologyArrowIcon.classList.add("fa-angle-up");
-          } else {
-            technologyArrowIcon.classList.remove("fa-angle-up");
-            technologyArrowIcon.classList.add("fa-angle-down");
-          }
-        }
-      }
-    }
-  }
-
-  function sortExperienceColumn(arrayToSort, experienceTime, technologyName, comparisonSign) {
-    sortNumber("experience", arrayToSort, comparisonSign);
-
-    for (let i = 0; i < arrayToSort.length; i++) {
-      for (let j = 0; j < experienceTime.length; j++) {
-        if (j === i) {
-          experienceTime[j].innerHTML = `${arrayToSort[i].experience} years`;
-
-          if (comparisonSign === "asc") {
-            experienceArrowIcon.classList.remove("fa-angle-down");
-            experienceArrowIcon.classList.add("fa-angle-up");
-          } else {
-            experienceArrowIcon.classList.remove("fa-angle-up");
-            experienceArrowIcon.classList.add("fa-angle-down");
-          }
-        }
-      }
-
-      for (let k = 0; k < technologyName.length; k++) {
-        if (k === i) {
-          technologyName[k].src = `images/${arrayToSort[i].name}.png`;
-        }
-      }
-    }
-  }
-
-  const experienceTime = document.querySelectorAll(".experience_time");
-  const technologyName = document.querySelectorAll(".technology_name");
-
-  async function sortArrayOnClick(sortArrFunction, keyToCompare) {
-    if (comparisonSign === "asc") {
-      await sortArrFunction(arrayToSort, experienceTime, technologyName, "asc", keyToCompare);
-      comparisonSign = "desc";
+  function sortRow(order, keyToCompare) {
+    if (keyToCompare === "experience") {
+      sortNumber(keyToCompare, arrayToSort, order);
     } else {
-      await sortArrFunction(arrayToSort, experienceTime, technologyName, "desc", keyToCompare);
-      comparisonSign = "asc";
+      sortTable(keyToCompare, arrayToSort, order);
+    }
+    const sortableRow = document.querySelectorAll(".sortable_row");
+
+    for(let i = 0; i < arrayToSort.length; i++) {
+      for (let j = 0; j < sortableRow.length; j++) {
+        if (i === j) {
+          sortableRow[j].children[0].innerHTML = arrayToSort[i].name;
+          sortableRow[j].children[1].children[0].src = `images/${arrayToSort[i].name}.png`;
+          sortableRow[j].children[2].innerHTML = `${arrayToSort[i].experience} years`;
+        }
+      }
     }
   }
 
-  experience.addEventListener("click", () => {
-    sortArrayOnClick(sortExperienceColumn, "experience");
+  function cleanClass(clickedElem) {
+    if (clickedElem.classList.contains("fa-angle-up")) {
+      clickedElem.classList.remove(`fa-angle-up`);
+    } else if (clickedElem.classList.contains("fa-angle-down")) {
+      clickedElem.classList.remove(`fa-angle-down`);
+    }
+  }
+
+  technologyName.addEventListener("click", () => {
+    order = (order === "asc") ? order = "desc" : order = "asc";
+    let direction = order === "asc" ? "up" : "down";
+
+    cleanClass(technologyNameSort);
+    cleanClass(experienceSort);
+
+    technologyNameSort.classList.add(`fa-angle-${direction}`);
+    experienceSort.classList.remove(`fa-angle-${direction}`);
+
+    sortRow(order, "name");
   });
 
-  technology.addEventListener("click", () => {
-    sortArrayOnClick(sortNameColumn, "name");
+  experience.addEventListener("click", () => {
+    order = (order === "asc") ? order = "desc" : order = "asc";
+    let direction = order === "asc" ? "up" : "down";
+
+    cleanClass(technologyNameSort);
+    cleanClass(experienceSort);
+
+    experienceSort.classList.add(`fa-angle-${direction}`);
+    technologyNameSort.classList.remove(`fa-angle-${direction}`);
+
+    sortRow(order, "experience");
   });
 
   //Show contact details

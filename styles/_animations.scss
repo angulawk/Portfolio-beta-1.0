@@ -87,3 +87,23 @@
     z-index: 0;
   }
 }
+
+@keyframes moveEnvelopeTop {
+  0% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: 120px;
+  }
+}
+
+@keyframes moveEnvelopeBottom {
+  100% {
+    margin-top: 120px;
+  }
+
+  0% {
+    margin-top: 0px;
+  }
+}

@@ -253,6 +253,16 @@ h6 {
   100% {
     top: 50%;
     z-index: 0; } }
+@keyframes moveEnvelopeTop {
+  0% {
+    margin-top: 0px; }
+  100% {
+    margin-top: 120px; } }
+@keyframes moveEnvelopeBottom {
+  100% {
+    margin-top: 120px; }
+  0% {
+    margin-top: 0px; } }
 html {
   scroll-behavior: smooth; }
 
@@ -777,10 +787,16 @@ div#timeline {
     border-right: 25vw solid #607d8b; }
 #contact-me .hide_envelope_bottom::before {
   animation: hideEnvelopeBottom 1000ms ease-in-out forwards; }
+#contact-me .hide_envelope_bottom {
+  animation: moveEnvelopeTop 800ms ease-in-out forwards;
+  animation-delay: 900ms; }
 #contact-me .show_envelope_bottom::before {
   border-bottom: 0vh solid #546e7a;
   animation: showEnvelopeBottom 1000ms ease-in-out forwards;
   animation-delay: 4000ms; }
+#contact-me .show_envelope_bottom {
+  animation: moveEnvelopeBottom 800ms ease-in-out forwards;
+  animation-delay: 3000ms; }
 #contact-me .envelope_box {
   position: absolute;
   left: 50%;
@@ -853,5 +869,10 @@ div#timeline {
     font-weight: 300;
     text-transform: lowercase;
     color: #272626; }
+#contact-me .close_envelope {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px; }
 
 /*# sourceMappingURL=style.css.map */
