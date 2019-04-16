@@ -6,3 +6,84 @@
     transform: translateY(0px);
   }
 }
+
+@keyframes showEnvelopeTop {
+  0% {
+    border-bottom: 0vh solid #546e7a;
+    top: 0;
+  }
+  100% {
+    border-bottom: 20vh solid #546e7a;
+    top: -50%;
+  }
+}
+
+@keyframes hideEnvelopeTop {
+  0% {
+    border-bottom: 20vh solid #546e7a;
+    top: -50%;
+  }
+  100% {
+    border-bottom: 0vh solid #546e7a;
+    top: 0;
+  }
+}
+
+@keyframes hideEnvelopeBottom {
+  0% {
+    border-bottom: 20vh solid #546e7a;
+    z-index: 10;
+  }
+  100% {
+    border-bottom: 0vh solid #546e7a;
+    z-index: 0;
+  }
+}
+
+@keyframes showEnvelopeBottom {
+  0% {
+    border-bottom: 0vh solid #546e7a;
+    z-index: 10;
+  }
+  100% {
+    border-bottom: 20vh solid #546e7a;
+    z-index: 10;
+  }
+}
+
+@keyframes showContactBox {
+  0% {
+    top: 50%;
+    visibility: hidden;
+    z-index: 0;
+  }
+
+  50% {
+    top: -20%;
+    z-index: 0;
+    visibility: visible;
+  }
+
+  100% {
+    top: 50%;
+    z-index: 15;
+    visibility: visible;
+  }
+}
+
+@keyframes hideContactBox {
+  0% {
+    top: 50%;
+    z-index: 15;
+  }
+
+  50% {
+    top: -20%;
+    z-index: 0;
+  }
+
+  100% {
+    top: 50%;
+    z-index: 0;
+  }
+}

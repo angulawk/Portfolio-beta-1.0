@@ -163,4 +163,39 @@ import { arrayToSort } from "./helpers/array-to-sort.js";
   technology.addEventListener("click", () => {
     sortArrayOnClick(sortNameColumn, "name");
   });
+
+  //Show contact details
+  const openContactBoxBtn = document.querySelector(".open_contact_box");
+  const envelopeBox = document.querySelector(".envelope_box");
+  const envelope = document.querySelector(".envelope");
+  const envelopeTop = document.querySelector(".envelope_top");
+  const closeEnvelope = document.querySelector(".fa-window-close");
+
+  openContactBoxBtn.addEventListener("click", () => {
+    envelopeBox.classList.remove("hidden_element");
+    envelopeBox.classList.add("visible_element");
+
+    envelope.classList.remove("show_envelope_bottom");
+    envelope.classList.add("hide_envelope_bottom");
+
+    envelopeTop.classList.remove("hide_envelope_top");
+    envelopeTop.classList.add("show_envelope_top");
+
+    openContactBoxBtn.style.opacity = "0";
+  });
+
+  closeEnvelope.addEventListener("click", () => {
+    envelopeBox.classList.add("hidden_element");
+    envelopeBox.classList.remove("visible_element");
+
+    envelope.classList.add("show_envelope_bottom");
+    envelope.classList.remove("hide_envelope_bottom");
+
+    envelopeTop.classList.add("hide_envelope_top");
+    envelopeTop.classList.remove("show_envelope_top");
+
+    setTimeout(() => {
+      openContactBoxBtn.style.opacity = "1";
+    }, 5000);
+  });
 })();
