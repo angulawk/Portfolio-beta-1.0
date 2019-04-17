@@ -236,7 +236,7 @@ h6 {
     visibility: hidden;
     z-index: 0; }
   50% {
-    top: -20%;
+    top: -175px;
     z-index: 0;
     visibility: visible; }
   100% {
@@ -248,23 +248,23 @@ h6 {
     top: 50%;
     z-index: 15; }
   50% {
-    top: -20%;
+    top: -175px;
     z-index: 0; }
   100% {
     top: 50%;
     z-index: 0; } }
 @keyframes moveEnvelopeTop {
   0% {
-    margin-top: 0px; }
+    margin-top: 0; }
   100% {
     margin-top: 120px; } }
 @keyframes moveEnvelopeBottom {
-  100% {
-    margin-top: 120px; }
   0% {
-    margin-top: 0px; } }
+    margin-top: 120px; }
+  100% {
+    margin-top: 0; } }
 html {
-  scroll-behavior: smooth; }
+  height: 100%; }
 
 .contact_me_btn {
   font-size: 44px;
@@ -579,13 +579,13 @@ nav {
   font-family: "PT Sans Narrow", sans-serif;
   letter-spacing: 3px;
   margin-bottom: 40px;
-  margin-top: .5em;
+  margin-top: 50px;
   width: 100%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
   #about-me table thead tr {
     color: #FFFFFF;
-    height: 80px; }
+    height: 70px; }
     #about-me table thead tr th {
       cursor: pointer;
       background-color: #ad1457; }
@@ -618,10 +618,10 @@ nav {
     vertical-align: middle; }
   #about-me table .sort-table-arrows {
     margin-left: 10px; }
-  #about-me table .experience, #about-me table .technology {
-    font-size: 1.5rem; }
-  #about-me table .experience_time {
+  #about-me table .experience, #about-me table .technology, #about-me table .technology_name {
     font-size: 1.2rem; }
+  #about-me table .experience_time, #about-me table .technology_name_desc {
+    font-size: 1rem; }
 #about-me .skills_slider {
   overflow: hidden;
   position: relative; }
@@ -795,6 +795,7 @@ div#timeline {
   animation: showEnvelopeBottom 1000ms ease-in-out forwards;
   animation-delay: 4000ms; }
 #contact-me .show_envelope_bottom {
+  margin-top: 120px;
   animation: moveEnvelopeBottom 800ms ease-in-out forwards;
   animation-delay: 3000ms; }
 #contact-me .envelope_box {
@@ -808,7 +809,7 @@ div#timeline {
   justify-content: center;
   align-items: center;
   font-family: "Lato", sans-serif;
-  width: 350px;
+  width: 50vw;
   height: 350px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   background-color: #FFFFFF; }

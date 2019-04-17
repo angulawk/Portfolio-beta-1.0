@@ -1,6 +1,7 @@
 import { showElementOnClick } from "./helpers/show-element-on-click.js";
 import { sortTable, sortNumber } from "./helpers/sort-table.js";
 import { arrayToSort } from "./helpers/array-to-sort.js";
+import { tableHead } from "./helpers/table-head.js"
 
 (function () {
   //Toggle navigation
@@ -85,6 +86,34 @@ import { arrayToSort } from "./helpers/array-to-sort.js";
   const workplaceDescription = document.querySelectorAll(".workplace_description");
 
   showElementOnClick(workplaceName, workplaceDescription);
+
+//Create table
+
+function tableCreate() {
+  let body = document.getElementsByTagName("body")[0];
+  let table = document.createElement("table");
+  table.style.width = "100%";
+  table.setAttribute("border", "1");
+  let thead = document.createElement("thead");
+  let tbody = document.createElement("tbody");
+  for (let i = 0; i < 3; i++) {
+    let tr = document.createElement("tr");
+    for (let j = 0; j < 2; j++) {
+      if (i == 2 && j == 1) {
+        break
+      } else {
+        let td = document.createElement("td");
+        td.appendChild(document.createTextNode("\u0020"))
+        i == 1 && j == 1 ? td.setAttribute("rowSpan", "2") : null;
+        tr.appendChild(td)
+      }
+    }
+    tbody.appendChild(tr);
+  }
+  table.appendChild(tbody);
+  body.appendChild(table)
+}
+tableCreate();
 
   //Sort array
 

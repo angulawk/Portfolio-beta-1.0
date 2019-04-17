@@ -1,14 +1,18 @@
 export const arrayToSort = [
   {
     name: "CSS",
-    experience: 1
+    experience: 3
   },
   {
-    name: "HTML",
+    name: "SASS",
     experience: 2
   },
   {
-    name: "Bootstrap",
+    name: "HTML",
     experience: 3
+  },
+  {
+    name: "Bootstrap",
+    experience: 1
   }
 ];
