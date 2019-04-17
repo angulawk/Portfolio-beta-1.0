@@ -1,7 +1,6 @@
 import { showElementOnClick } from "./helpers/show-element-on-click.js";
 import { sortTable, sortNumber } from "./helpers/sort-table.js";
-import { arrayToSort } from "./helpers/array-to-sort.js";
-import { tableHead } from "./helpers/table-head.js"
+import { arrayToSort, tableHead } from "./helpers/array-to-sort.js";
 
 (function () {
   //Toggle navigation
@@ -90,28 +89,70 @@ import { tableHead } from "./helpers/table-head.js"
 //Create table
 
 function tableCreate() {
-  let body = document.getElementsByTagName("body")[0];
-  let table = document.createElement("table");
-  table.style.width = "100%";
+  let table = document.querySelector("#technology-stack-table");
   table.setAttribute("border", "1");
   let thead = document.createElement("thead");
   let tbody = document.createElement("tbody");
-  for (let i = 0; i < 3; i++) {
+  let headingRow = document.createElement("tr");
+
+  for(let i = 0; i < tableHead.length; i++) {
+    thead.appendChild(headingRow);
+    let th = document.createElement("th");
+    th.innerHTML = tableHead[i].title;
+    th.classList.add(tableHead[i].class)
+    headingRow.appendChild(th);
+
+    if(tableHead[i].title === "Name") {
+      let a = document.createElement("a");
+      th.appendChild(a);
+      let i = document.createElement("i");
+      i.classList.add("fa");
+      i.classList.add("sort_direction_icon");
+      i.classList.add("fa-angle-down");
+      a.appendChild(i);
+    }
+
+    if(tableHead[i].title === "Experience") {
+      let a = document.createElement("a");
+      th.appendChild(a);
+      let i = document.createElement("i");
+      i.classList.add("fa");
+      i.classList.add("sort_direction_icon");
+      a.appendChild(i);
+    }
+  }
+
+  for (let i = 0; i < arrayToSort.length; i++) {
     let tr = document.createElement("tr");
-    for (let j = 0; j < 2; j++) {
-      if (i == 2 && j == 1) {
-        break
+    tbody.appendChild(tr);
+    tr.classList.add("sortable_row");
+
+    for (let key in arrayToSort[i]) {
+      if (key === "name") {
+        let technologyNameDesc = document.createElement("td");
+        technologyNameDesc.innerHTML = arrayToSort[i].name;
+        technologyNameDesc.classList.add("technology_name_desc");
+
+        tr.appendChild(technologyNameDesc);
+      } else if (key === "image") {
+        let imageData = document.createElement("td");
+        let img = document.createElement("img");
+        img.src = `images/${arrayToSort[i].name}.png`;
+        imageData.appendChild(img);
+
+        tr.appendChild(imageData);
       } else {
-        let td = document.createElement("td");
-        td.appendChild(document.createTextNode("\u0020"))
-        i == 1 && j == 1 ? td.setAttribute("rowSpan", "2") : null;
-        tr.appendChild(td)
+        let experienceTime = document.createElement("td");
+        experienceTime.innerHTML = arrayToSort[i].experience;
+        experienceTime.classList.add("experience_time");
+
+        tr.appendChild(experienceTime);
+
       }
     }
-    tbody.appendChild(tr);
   }
+  table.appendChild(thead);
   table.appendChild(tbody);
-  body.appendChild(table)
 }
 tableCreate();
 
@@ -121,8 +162,8 @@ tableCreate();
   const sortDirectionIcon = document.querySelector(".sort_direction_icon");
   const sortableRow = document.querySelectorAll(".sortable_row");
 
-  const technologyNameSort = document.querySelector(".technology_name_sort .sort_direction_icon");
-  const experienceSort = document.querySelector(".experience_sort .sort_direction_icon");
+  const technologyNameSort = document.querySelector(".technology_name a .sort_direction_icon");
+  const experienceSort = document.querySelector(".experience a .sort_direction_icon");
 
   const technologyName = document.querySelector(".technology_name");
   const experience = document.querySelector(".experience");
