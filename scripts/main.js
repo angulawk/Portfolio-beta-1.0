@@ -182,7 +182,7 @@ tableCreate();
       for (let j = 0; j < sortableRow.length; j++) {
         if (i === j) {
           sortableRow[j].children[0].innerHTML = arrayToSort[i].name;
-          sortableRow[j].children[1].children[0].src = `images/${arrayToSort[i].name}.png`;
+          sortableRow[j].children[1].children[0].src = `images/${arrayToSort[i].image}.png`;
           sortableRow[j].children[2].innerHTML = `${arrayToSort[i].experience} years`;
         }
       }
