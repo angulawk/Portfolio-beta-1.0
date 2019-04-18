@@ -1,0 +1,227 @@
+#contact-me {
+  .envelope {
+   width: 50vw;
+   height: 40vh;
+   margin: 0 auto;
+   position: relative;
+
+     .envelope_top {
+       position: absolute;
+       border-left: 25vw solid transparent;
+       border-right: 25vw solid transparent;
+       z-index: -1;
+     }
+
+     .show_envelope_top {
+       animation: showEnvelopeTop 500ms ease-in-out forwards;
+       animation-delay: 1000ms;
+     }
+
+     .hide_envelope_top {
+       border-bottom: 20vh solid #546e7a;
+       top: -50%;
+       animation: hideEnvelopeTop 1000ms ease-in-out forwards;
+       animation-delay: 3000ms;
+     }
+
+     .open_contact_box {
+       height: 100px;
+       width: 100px;
+       border-radius: 100%;
+       position: absolute;
+       left: 50%;
+       top: 50%;
+       transform: translate(-50%, -50%);
+       z-index: 20;
+       background: #f06292;
+       color: #FFFFFF;
+       display: block;
+       transition: 0.5s;
+
+       &::before {
+         border-radius: 100%;
+         border: 2px solid #f06292;
+         box-shadow: 0 0 15px rgba(0, 255, 204, 0.15), 0 0 15px rgba(0, 255, 204, 0.15) inset;
+         content: "";
+         display: block;
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         height: 120px;
+         width: 120px;
+         margin-left: -61px;
+         margin-top: -61px;
+         opacity: 1;
+         transform: scale(1);
+         transition: all 300ms;
+       }
+
+       &:hover:before {
+         transform: scale(1.05);
+       }
+     }
+
+     &::before, &::after, .envelope_sides::before, .envelope_sides::after {
+       content: '';
+       width: 0;
+       height: 0;
+       position: absolute;
+     }
+
+     &::before {
+       top: 0;
+       border-left: 25vw solid transparent;
+       border-right: 25vw solid transparent;
+       border-bottom: 20vh solid #546e7a;
+       transform: rotate(180deg);
+     }
+
+     &::after {
+       bottom: 0;
+       border-left: 25vw solid transparent;
+       border-right: 25vw solid transparent;
+       border-bottom: 26vh solid #455a64;
+     }
+
+     .envelope_sides::before, .envelope_sides:after {
+       bottom: 0;
+       border-bottom: 20vh solid transparent;
+       border-top: 20vh solid transparent;
+     }
+
+     .envelope_sides:before {
+       left: 0;
+       border-left: 25vw solid #607d8b;
+     }
+
+     .envelope_sides:after {
+       right: 0;
+       border-right: 25vw solid #607d8b;
+     }
+
+   }
+
+   .hide_envelope_bottom::before {
+     animation: hideEnvelopeBottom 1000ms ease-in-out forwards;
+   }
+
+   .hide_envelope_bottom {
+     animation: moveEnvelopeTop 800ms ease-in-out forwards;
+     animation-delay: 900ms;
+   }
+
+   .show_envelope_bottom::before {
+     border-bottom: 0vh solid #546e7a;
+     animation: showEnvelopeBottom 1000ms ease-in-out forwards;
+     animation-delay: 4000ms;
+   }
+
+   .show_envelope_bottom {
+     margin-top: 120px;
+     animation: moveEnvelopeBottom 800ms ease-in-out forwards;
+     animation-delay: 3000ms;
+   }
+
+   .envelope_box {
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+     visibility: hidden;
+     display: flex;
+     flex-flow: column wrap;
+     justify-content: center;
+     align-items: center;
+     font-family: "Lato", sans-serif;
+     width: 50vw;
+     height: 350px;
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+     background-color: $white;
+
+     li {
+       display: flex;
+       flex-flow: column nowrap;
+       justify-content: center;
+       align-items: center;
+       font-size: 0.9rem;
+       letter-spacing: 1px;
+       line-height: 1.5rem;
+       text-transform: uppercase;
+       margin-bottom: 50px;
+       padding-right: 10px;
+
+       &:last-child {
+         margin-bottom: 0px;
+       }
+     }
+
+     a {
+       font-family: "Lato", sans-serif;
+       font-size: 1rem;
+       font-weight: 300;
+       text-transform: lowercase;
+       color: #455a64;
+     }
+   }
+
+  .visible_element {
+     visibility: visible;
+     transition: visibility 500ms ease-in-out;
+     animation: showContactBox 2500ms ease-in-out forwards;
+     animation-delay: 2000ms;
+  }
+
+  .hidden_element {
+     visibility: visible;
+     transition: visibility 500ms ease-in-out;
+     animation: hideContactBox 2500ms ease-in-out forwards;
+  }
+
+  .contact_me_box {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lato", sans-serif;
+    width: 100%;
+    height: 350px;
+    margin: 0 auto 50px auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+    @media(min-width: 768px) {
+      max-width: 350px;
+    }
+
+    li {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      line-height: 1.5rem;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+      padding-right: 10px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+
+    a {
+      word-break: break-all;
+      font-family: "Lato", sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      text-transform: lowercase;
+      color: $darkgray;
+    }
+  }
+
+  .close_envelope {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+  }
+}

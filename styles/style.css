@@ -120,14 +120,14 @@ h2 {
 
 h3 {
   font-family: Pinstripe;
-  font-size: 4rem;
-  line-height: 4rem;
+  font-size: 3rem;
+  line-height: 3rem;
   text-transform: uppercase;
   padding: 75px 0; }
   @media (min-width: 480px) {
     h3 {
-      font-size: 4.5rem;
-      line-height: 4.5rem; } }
+      font-size: 4rem;
+      line-height: 4rem; } }
   @media (min-width: 600px) {
     h3 {
       font-size: 5rem;
@@ -263,23 +263,6 @@ h6 {
     margin-top: 120px; }
   100% {
     margin-top: 0; } }
-html {
-  height: 100%; }
-
-.contact_me_btn {
-  font-size: 44px;
-  margin-top: 25px; }
-  .contact_me_btn i {
-    color: #272626; }
-
-@media (min-width: 768px) {
-  .fixed {
-    position: fixed;
-    z-index: 999;
-    height: 80px;
-    width: 100%;
-    animation: smoothScroll 1s forwards; } }
-
 nav {
   z-index: 999;
   background: #560027;
@@ -619,20 +602,29 @@ nav {
   #about-me table .sort-table-arrows {
     margin-left: 10px; }
   #about-me table .experience, #about-me table .technology, #about-me table .technology_name {
-    font-size: 1.2rem; }
+    font-size: 0.8rem; }
+    @media (min-width: 600px) {
+      #about-me table .experience, #about-me table .technology, #about-me table .technology_name {
+        font-size: 1rem; } }
+    @media (min-width: 768px) {
+      #about-me table .experience, #about-me table .technology, #about-me table .technology_name {
+        font-size: 1.2rem; } }
   #about-me table .experience_time, #about-me table .technology_name_desc {
-    font-size: 1rem; }
+    font-size: 0.8rem; }
+    @media (min-width: 768px) {
+      #about-me table .experience_time, #about-me table .technology_name_desc {
+        font-size: 1rem; } }
 #about-me .skills_slider {
   overflow: hidden;
   position: relative; }
 
-div#timeline {
+#experience div#timeline {
   background-color: #ad1457;
   margin-top: 80px;
   height: 10px;
   width: 100%;
   position: relative; }
-  div#timeline .inside {
+  #experience div#timeline .inside {
     transition: width 0.3s ease-in;
     position: absolute;
     height: 4px;
@@ -640,7 +632,7 @@ div#timeline {
     width: 0%;
     top: 3px;
     left: 0; }
-  div#timeline .dot {
+  #experience div#timeline .dot {
     z-index: 99;
     transition: 0.3s ease-in-out;
     width: 40px;
@@ -651,24 +643,24 @@ div#timeline {
     text-align: center;
     cursor: pointer;
     background-color: #f06292; }
-    div#timeline .dot:nth-child(1) {
+    #experience div#timeline .dot:nth-child(1) {
       left: 20%; }
-    div#timeline .dot:nth-child(2) {
+    #experience div#timeline .dot:nth-child(2) {
       left: 40%; }
-    div#timeline .dot:nth-child(3) {
+    #experience div#timeline .dot:nth-child(3) {
       left: 60%; }
-    div#timeline .dot:nth-child(4) {
+    #experience div#timeline .dot:nth-child(4) {
       left: 80%; }
-    div#timeline .dot:hover {
+    #experience div#timeline .dot:hover {
       transform: scale(1.2); }
-    div#timeline .dot date {
+    #experience div#timeline .dot date {
       font-family: roboto;
       font-size: 1.1rem;
       display: block;
       position: relative;
       top: -60px;
       text-align: center; }
-    div#timeline .dot span {
+    #experience div#timeline .dot span {
       display: inline-block;
       margin-top: 10px;
       width: 20px;
@@ -677,17 +669,14 @@ div#timeline {
       position: relative;
       border-radius: 50%;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
-
-#workplaces_2016 {
+#experience #workplaces_2016 {
   display: flex;
   justify-content: space-evenly; }
-  #workplaces_2016 .workplace_name {
+  #experience #workplaces_2016 .workplace_name {
     cursor: pointer; }
-
-.workplace_description {
+#experience .workplace_description {
   display: none; }
-
-.modal_content {
+#experience .modal_content {
   display: none;
   position: relative;
   top: 30px;
@@ -695,19 +684,18 @@ div#timeline {
   background-color: #FFFFFF;
   padding: 20px;
   margin: auto; }
-  .modal_content date {
+  #experience .modal_content date {
     display: block;
     text-align: right; }
-  .modal_content h2 {
+  #experience .modal_content h2 {
     font-family: merriweather, sans-serif;
     font-size: 5rem;
     padding: 10px 0;
     border-bottom: solid #111 2px;
     margin-bottom: 20px; }
-  .modal_content p {
+  #experience .modal_content p {
     line-height: 130%; }
-
-.active_workplace_description, .active_article {
+#experience .active_workplace_description, #experience .active_article {
   display: block; }
 
 #contact-me .envelope {
@@ -847,10 +835,13 @@ div#timeline {
   justify-content: center;
   align-items: center;
   font-family: "Lato", sans-serif;
-  width: 350px;
+  width: 100%;
   height: 350px;
   margin: 0 auto 50px auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  @media (min-width: 768px) {
+    #contact-me .contact_me_box {
+      max-width: 350px; } }
   #contact-me .contact_me_box li {
     display: flex;
     flex-flow: column nowrap;
@@ -865,6 +856,7 @@ div#timeline {
     #contact-me .contact_me_box li:last-child {
       margin-bottom: 0px; }
   #contact-me .contact_me_box a {
+    word-break: break-all;
     font-family: "Lato", sans-serif;
     font-size: 1rem;
     font-weight: 300;
@@ -875,5 +867,16 @@ div#timeline {
   top: 0;
   right: 0;
   padding: 15px; }
+
+html {
+  height: 100%; }
+
+@media (min-width: 768px) {
+  .fixed {
+    position: fixed;
+    z-index: 999;
+    height: 80px;
+    width: 100%;
+    animation: smoothScroll 1s forwards; } }
 
 /*# sourceMappingURL=style.css.map */

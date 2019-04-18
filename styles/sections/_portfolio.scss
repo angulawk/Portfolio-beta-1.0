@@ -1,0 +1,137 @@
+#portfolio {
+  ul.columns {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    .single_column {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      padding-bottom: 60px;
+      border: none;
+      position: relative;
+
+      @media (min-width: 480px) {
+        width: 80%;
+      }
+
+      @media (min-width: 768px) {
+        width: 70%;
+      }
+
+      @media (min-width: 1024px) {
+        width: 49%;
+        border-bottom: 2px solid #fbfafa;
+        border-right: 2px solid #fbfafa;
+      }
+
+      &:nth-of-type(even) {
+        border-right: none;
+      }
+
+      .small_view {
+        float: left;
+        margin-left: 3px;
+        overflow: hidden;
+        position: relative;
+        height: 150px;
+        width: 80%;
+        overflow: hidden;
+        border: 2px solid #dadada;
+
+        @media (min-width: 360px) {
+          height: 200px;
+        }
+
+        @media (min-width: 480px) {
+          height: 250px;
+        }
+
+        @media (min-width: 600px) {
+          height: 280px;
+        }
+
+        @media (min-width: 768px) {
+          height: 300px;
+        }
+
+        @media (min-width: 1024px) {
+          height: 350px;
+        }
+
+        img {
+          width: 100%;
+          position: absolute;
+          transition: top 20s ease-out 0.2s;
+        }
+
+        .img_layer {
+          position: absolute;
+          top: 100%;
+          width: 0;
+          height: 0;
+          border-top: 350px solid transparent;
+          border-bottom: 0px solid transparent;
+          border-left: 560px solid $white;
+          opacity: 0.7;
+          transition: 0.5s ease-in-out;
+
+          p {
+            font-family: Canter;
+            font-size: 2rem;
+            color: $darkgray;
+            text-align: left;
+            top: -250px;
+            left: -508px;
+            position: relative;
+            width: 93px;
+            margin: 0px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+          }
+        }
+
+        &:hover .img_layer {
+          @media (min-width: 1400px) {
+            top: 0%;
+          }
+        }
+      }
+
+      .more_info {
+        @media (min-width: 1400px) {
+          display: none;
+        }
+
+        .triangle {
+          position: relative;
+          width: 0;
+          height: 0;
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-top: 20px solid #dadada;
+          margin: 0 auto;
+        }
+
+        .box_info {
+          height: 0;
+          overflow: hidden;
+          transition: height 0.5s ease-in;
+          ul {
+            font-family: "Lato", sans-serif;
+            font-weight: 300;
+            text-align: center;
+
+            li {
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
