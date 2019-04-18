@@ -1,15 +1,24 @@
 #contact-me {
   .envelope {
-   width: 50vw;
-   height: 40vh;
-   margin: 0 auto;
-   position: relative;
+    width: 100vw;
+    height: 40vh;
+    position: relative;
+
+    @media(min-width: 600px) {
+      width: 50vw;
+      margin: 0 auto;
+    }
 
      .envelope_top {
        position: absolute;
-       border-left: 25vw solid transparent;
-       border-right: 25vw solid transparent;
+       border-left: 50vw solid transparent;
+       border-right: 50vw solid transparent;
        z-index: -1;
+
+       @media(min-width: 600px) {
+          border-left: 25vw solid transparent;
+          border-right: 25vw solid transparent;
+       }
      }
 
      .show_envelope_top {
@@ -18,13 +27,14 @@
      }
 
      .hide_envelope_top {
-       border-bottom: 20vh solid #546e7a;
+       border-bottom: 20vh solid $lightorange;
        top: -50%;
        animation: hideEnvelopeTop 1000ms ease-in-out forwards;
        animation-delay: 3000ms;
      }
 
      .open_contact_box {
+       font-family: "Lato", sans-serif;
        height: 100px;
        width: 100px;
        border-radius: 100%;
@@ -33,14 +43,16 @@
        top: 50%;
        transform: translate(-50%, -50%);
        z-index: 20;
-       background: #f06292;
-       color: #FFFFFF;
+       background: $ecrie;
+       color: $darkgray;
        display: block;
        transition: 0.5s;
+       text-transform: uppercase;
+       letter-spacing: 2px;
 
        &::before {
          border-radius: 100%;
-         border: 2px solid #f06292;
+         border: 2px solid $ecrie;
          box-shadow: 0 0 15px rgba(0, 255, 204, 0.15), 0 0 15px rgba(0, 255, 204, 0.15) inset;
          content: "";
          display: block;
@@ -69,18 +81,29 @@
      }
 
      &::before {
-       top: 0;
-       border-left: 25vw solid transparent;
-       border-right: 25vw solid transparent;
-       border-bottom: 20vh solid #546e7a;
-       transform: rotate(180deg);
+        top: 0;
+        border-left: 50vw solid transparent;
+        border-right: 50vw solid transparent;
+        border-bottom: 20vh solid $lightorange;
+        transform: rotate(180deg);
+        z-index: 1;
+
+        @media(min-width: 600px) {
+          border-left: 25vw solid transparent;
+          border-right: 25vw solid transparent;
+        }
      }
 
      &::after {
        bottom: 0;
-       border-left: 25vw solid transparent;
-       border-right: 25vw solid transparent;
-       border-bottom: 26vh solid #455a64;
+       border-bottom: 26vh solid $lightorange;
+       border-left: 50vw solid transparent;
+       border-right: 50vw solid transparent;
+
+       @media(min-width: 600px) {
+         border-left: 25vw solid transparent;
+         border-right: 25vw solid transparent;
+       }
      }
 
      .envelope_sides::before, .envelope_sides:after {
@@ -91,14 +114,21 @@
 
      .envelope_sides:before {
        left: 0;
-       border-left: 25vw solid #607d8b;
+       border-left: 50vw solid $mediumorange;
+
+       @media(min-width: 600px) {
+         border-left: 25vw solid $mediumorange;
+       }
      }
 
      .envelope_sides:after {
        right: 0;
-       border-right: 25vw solid #607d8b;
-     }
+       border-right: 50vw solid $mediumorange;
 
+       @media(min-width: 600px) {
+         border-right: 25vw solid $mediumorange;
+       }
+     }
    }
 
    .hide_envelope_bottom::before {
@@ -111,7 +141,7 @@
    }
 
    .show_envelope_bottom::before {
-     border-bottom: 0vh solid #546e7a;
+     border-bottom: 0vh solid $lightorange;
      animation: showEnvelopeBottom 1000ms ease-in-out forwards;
      animation-delay: 4000ms;
    }
@@ -133,10 +163,14 @@
      justify-content: center;
      align-items: center;
      font-family: "Lato", sans-serif;
-     width: 50vw;
-     height: 350px;
+     width: 100vw;
+     height: 100%;
      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-     background-color: $white;
+     background-color: $ecrie;
+
+     @media(min-width: 600px) {
+       width: 50vw;
+     }
 
      li {
        display: flex;
