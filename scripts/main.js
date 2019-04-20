@@ -36,7 +36,7 @@ import { arrayToSort, tableHead } from "./helpers/array-to-sort.js";
   const moreInfoArray = document.querySelectorAll(".more_info");
 
   for (let index = 0; index < moreInfoArray.length; index++) {
-    moreInfoArray[index].addEventListener("click", function () {
+    moreInfoArray[index].addEventListener("click", function() {
       const boxInfo = this.childNodes[3];
       const headerContent = boxInfo.childNodes[1];
       boxInfo.classList.toggle("show_box_info");
@@ -52,18 +52,18 @@ import { arrayToSort, tableHead } from "./helpers/array-to-sort.js";
 
   window.addEventListener("scroll", function (e) {
     const menu = document.querySelector("#menu");
-    if (window.scrollY > menu.clientHeight) {
+    // if (window.scrollY > (menu.clientHeight / 2)) {
       menu.classList.add("fixed");
-    } else {
-      menu.classList.remove("fixed");
-    }
+      // } else {
+      //   menu.classList.remove("fixed");
+      // }
   });
 
   //Active link
 
   const linksList = document.querySelectorAll(".links li a");
 
-  linksList.forEach(function (item) {
+  linksList.forEach(function(item) {
     item.addEventListener("click", function () {
       linksList.forEach(function (element) {
         element.classList.remove("active_link");
@@ -257,4 +257,29 @@ tableCreate();
       openContactBoxBtn.style.opacity = "1";
     }, 5000);
   });
+
+  //smooth scroll
+
+  function smoothScrollElem(element) {
+    window.scrollTo({
+      "behavior": "smooth",
+      "left": 0,
+      "top": element.offsetTop
+    });
+  }
+
+  const navLinks = document.querySelectorAll(".menu_link");
+  const sections = document.querySelectorAll(".smooth_scroll_section");
+
+  for(let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener("click", (e) => {
+      for(let j = 0; j < sections.length; j++) {
+        e.preventDefault();
+        if(i === j) {
+          console.log("sections[j]", sections[j]);
+          smoothScrollElem(sections[j]);
+        }
+      }}
+    );
+  }
 })();
