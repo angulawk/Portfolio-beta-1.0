@@ -257,10 +257,10 @@ h6 {
   0% {
     margin-top: 0; }
   100% {
-    margin-top: 200px; } }
+    margin-top: 15vh; } }
 @keyframes moveEnvelopeBottom {
   0% {
-    margin-top: 200px; }
+    margin-top: 15vh; }
   100% {
     margin-top: 0; } }
 nav {
@@ -848,7 +848,7 @@ nav {
   animation: showEnvelopeBottom 1000ms ease-in-out forwards;
   animation-delay: 4000ms; }
 #contact-me .show_envelope_bottom {
-  margin-top: 120px;
+  margin-top: 15vh;
   animation: moveEnvelopeBottom 800ms ease-in-out forwards;
   animation-delay: 3000ms; }
 #contact-me .envelope_box {

@@ -230,28 +230,30 @@ tableCreate();
   const envelopeTop = document.querySelector(".envelope_top");
   const closeEnvelope = document.querySelector(".fa-window-close");
 
-  openContactBoxBtn.addEventListener("click", () => {
+  openContactBoxBtn.addEventListener("click", async (e) => {
     envelopeBox.classList.remove("hidden_element");
-    envelopeBox.classList.add("visible_element");
+    await envelopeBox.classList.add("visible_element");
 
     envelope.classList.remove("show_envelope_bottom");
-    envelope.classList.add("hide_envelope_bottom");
+    await envelope.classList.add("hide_envelope_bottom");
 
     envelopeTop.classList.remove("hide_envelope_top");
-    envelopeTop.classList.add("show_envelope_top");
+    await envelopeTop.classList.add("show_envelope_top");
 
     openContactBoxBtn.style.opacity = "0";
+    e.preventDefault();
+    window.scrollTo(0, (document.body.scrollHeight + 200));
   });
 
   closeEnvelope.addEventListener("click", () => {
     envelopeBox.classList.add("hidden_element");
     envelopeBox.classList.remove("visible_element");
 
-    envelope.classList.add("show_envelope_bottom");
-    envelope.classList.remove("hide_envelope_bottom");
-
     envelopeTop.classList.add("hide_envelope_top");
     envelopeTop.classList.remove("show_envelope_top");
+
+    envelope.classList.add("show_envelope_bottom");
+    envelope.classList.remove("hide_envelope_bottom");
 
     setTimeout(() => {
       openContactBoxBtn.style.opacity = "1";
@@ -276,7 +278,6 @@ tableCreate();
       for(let j = 0; j < sections.length; j++) {
         e.preventDefault();
         if(i === j) {
-          console.log("sections[j]", sections[j]);
           smoothScrollElem(sections[j]);
         }
       }}
