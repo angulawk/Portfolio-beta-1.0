@@ -3,10 +3,11 @@
     width: 100vw;
     height: 40vh;
     position: relative;
+    margin: 100px auto;
+
 
     @media(min-width: 600px) {
       width: 50vw;
-      margin: 0 auto;
     }
 
      .envelope_top {
@@ -24,6 +25,7 @@
      .show_envelope_top {
        animation: showEnvelopeTop 500ms ease-in-out forwards;
        animation-delay: 1000ms;
+       top: 0;
      }
 
      .hide_envelope_top {

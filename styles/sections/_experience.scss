@@ -1,16 +1,29 @@
 #experience {
-  div#timeline {
-  background-color: $orange;
-  margin-top: 80px;
-  height: 10px;
-  width: 100%;
-  position: relative;
+  .experience_container {
+    display: flex;
+    justify-content: center;
+  }
+
+  #timeline {
+    background-color: $orange;
+    height: 500px;
+    position: relative;
+    margin-top: 20px;
+    left: 30px;
+    width: 0;
+    z-index: 1;
+
+    @media(min-width: 768px) {
+      left: 70px;
+      width: 10px;
+    }
+
   .inside {
-    transition: width 0.3s ease-in;
+    transition: height 0.3s ease-in-out;
     position: absolute;
-    height: 4px;
-    background-color: $ecrie;
-    width: 0%;
+    background-color: $lightorange;
+    height: 0px;
+    width: 10px;
     top: 3px;
     left: 0;
   }
@@ -25,17 +38,27 @@
     text-align: center;
     cursor: pointer;
     background-color: $mediumorange;
+
+    @media(min-width: 768px) {
+      left: 0px;
+      top: -50px;
+    }
+
     &:nth-child(1) {
-      left: 20%;
+      left: -16px;
+      top: 0px;
     }
     &:nth-child(2) {
-      left: 40%;
+      left: -16px;
+      top: 65px;
     }
     &:nth-child(3) {
-      left: 60%;
+      left: -16px;
+      top: 130px;
     }
     &:nth-child(4) {
-      left: 80%;
+      left: -16px;
+      top: 195px;
     }
     &:hover {
       transform: scale(1.2);
@@ -45,8 +68,14 @@
       font-size: 1.1rem;
       display: block;
       position: relative;
-      top: -60px;
       text-align: center;
+      left: 0;
+      top: -50px;
+
+      @media(min-width: 768px) {
+        left: -45px;
+        top: -20px;
+      }
     }
     span {
       display: inline-block;
@@ -70,7 +99,7 @@
     font-size: 1rem;
     cursor: pointer;
 
-    @media(min-width: 600px) {
+    @media(min-width: 768px) {
       flex-flow: row wrap;
       justify-content: space-around;
     }
@@ -85,7 +114,7 @@
       &:last-child {
         margin-bottom: 0px;
 
-        @media(min-width: 600px) {
+        @media(min-width: 768px) {
           margin-bottom: 25px;
         }
       }
@@ -98,7 +127,7 @@
     }
   }
   .workplace_description {
-    display: none;
+    display: block;
 
     h6 {
       padding: 25px 0;
@@ -120,11 +149,19 @@
   .modal_content {
     display: none;
     position: relative;
-    top: 30px;
+    top: 0;
     max-width: 960px;
     background-color: $white;
-    padding: 20px;
-    margin: auto;
+    padding-left: 75px;
+
+    @media(min-width: 768px) {
+      padding-left: 95px;
+    }
+
+    @media(min-width: 1024px) {
+      padding-left: 130px;
+    }
+
     date {
       display: block;
       text-align: right;

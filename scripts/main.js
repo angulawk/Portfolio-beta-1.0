@@ -63,9 +63,9 @@ import { arrayToSort, tableHead } from "./helpers/array-to-sort.js";
 
   const linksList = document.querySelectorAll(".links li a");
 
-  linksList.forEach(function(item) {
+  linksList.forEach(item => {
     item.addEventListener("click", function () {
-      linksList.forEach(function (element) {
+      linksList.forEach(element => {
         element.classList.remove("active_link");
       });
       item.classList.add("active_link");
@@ -230,7 +230,7 @@ tableCreate();
   const envelopeTop = document.querySelector(".envelope_top");
   const closeEnvelope = document.querySelector(".fa-window-close");
 
-  openContactBoxBtn.addEventListener("click", async (e) => {
+  openContactBoxBtn.addEventListener("click", async () => {
     envelopeBox.classList.remove("hidden_element");
     await envelopeBox.classList.add("visible_element");
 
@@ -241,8 +241,6 @@ tableCreate();
     await envelopeTop.classList.add("show_envelope_top");
 
     openContactBoxBtn.style.opacity = "0";
-    e.preventDefault();
-    window.scrollTo(0, (document.body.scrollHeight + 200));
   });
 
   closeEnvelope.addEventListener("click", () => {
