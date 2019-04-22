@@ -2,7 +2,7 @@ import { showElementOnClick } from "./helpers/show-element-on-click.js";
 import { sortTable, sortNumber } from "./helpers/sort-table.js";
 import { arrayToSort, tableHead } from "./helpers/array-to-sort.js";
 
-(function () {
+(function() {
   //Toggle navigation
 
   const hamburger = document.querySelector(".hamburger");
@@ -24,6 +24,8 @@ import { arrayToSort, tableHead } from "./helpers/array-to-sort.js";
       imageHeight = parseInt(this.childNodes[1].height);
       const hiddenImageHeight = imageHeight - smallViewHeight;
       imageHeight = `-${hiddenImageHeight}px`;
+      console.log("imageHeight", imageHeight);
+      console.log("smallViewHeight", smallViewHeight);
       this.childNodes[1].style.top = imageHeight;
     });
 
@@ -264,7 +266,7 @@ tableCreate();
     window.scrollTo({
       "behavior": "smooth",
       "left": 0,
-      "top": element.offsetTop
+      "top": element.offsetTop - 75
     });
   }
 

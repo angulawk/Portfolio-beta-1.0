@@ -253,29 +253,23 @@ h6 {
   100% {
     top: 50%;
     z-index: 0; } }
-@keyframes moveEnvelopeTop {
-  0% {
-    margin-top: 0; }
-  100% {
-    margin-top: 15vh; } }
-@keyframes moveEnvelopeBottom {
-  0% {
-    margin-top: 15vh; }
-  100% {
-    margin-top: 0; } }
 nav {
   z-index: 999;
   background: #E85359;
   min-height: 80px;
   height: 100%;
   width: 100%; }
+  @media screen and (min-width: 900px) {
+    nav {
+      max-height: 80px;
+      min-height: 70px; } }
   nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
     height: 100%; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 900px) {
       nav .container {
         flex-direction: row; } }
   nav .nav_header {
@@ -286,7 +280,8 @@ nav {
     nav .nav_header h1 {
       font-size: 2rem;
       font-weight: 400;
-      font-family: CanterThreeD; }
+      font-family: CanterThreeD;
+      margin-bottom: 15px; }
       @media (min-width: 768px) {
         nav .nav_header h1 {
           font-size: 2.3rem; } }
@@ -303,7 +298,7 @@ nav {
     right: 0;
     top: 15px;
     cursor: pointer; }
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       nav button.hamburger {
         display: none; } }
   nav .links {
@@ -315,7 +310,7 @@ nav {
     max-height: 0;
     transition: max-height 0.5s ease-in-out;
     overflow: hidden; }
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       nav .links {
         order: 2;
         flex-direction: row;
@@ -329,16 +324,17 @@ nav {
       font-size: 1.4rem;
       font-family: Canter;
       margin: 19px 0; }
-      @media (min-width: 768px) {
+      @media (min-width: 900px) {
         nav .links li {
           padding-right: 25px;
           margin: 0; } }
-      @media (min-width: 900px) {
-        nav .links li {
-          font-size: 1.76rem; } }
       @media (min-width: 1024px) {
         nav .links li {
-          padding-right: 47px; } }
+          font-size: 1.55rem; } }
+      @media (min-width: 1200px) {
+        nav .links li {
+          font-size: 1.76rem;
+          padding-right: 35px; } }
       nav .links li a {
         text-decoration: none;
         transition: all 0.3s ease-in-out;
@@ -391,7 +387,7 @@ nav {
     align-items: center;
     order: 2;
     padding-bottom: 20px; }
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       nav .social_icons {
         order: 3;
         padding: 0; } }
@@ -401,11 +397,17 @@ nav {
       @media (min-width: 768px) {
         nav .social_icons a {
           margin: 0 12px; } }
-      @media (min-width: 900px) {
+      @media (min-width: 1024px) {
         nav .social_icons a {
           margin-right: 27px; } }
       nav .social_icons a i {
-        font-size: 1.76rem; }
+        font-size: 1.2rem; }
+        @media (min-width: 900px) {
+          nav .social_icons a i {
+            font-size: 1.4rem; } }
+        @media (min-width: 1024px) {
+          nav .social_icons a i {
+            font-size: 1.76rem; } }
 
 #portfolio ul.columns {
   display: flex;
@@ -865,18 +867,12 @@ nav {
       #contact-me .envelope .envelope_sides:after {
         border-right: 25vw solid #FF9E92; } }
 #contact-me .hide_envelope_bottom::before {
+  top: 0;
   animation: hideEnvelopeBottom 1000ms ease-in-out forwards; }
-#contact-me .hide_envelope_bottom {
-  animation: moveEnvelopeTop 800ms ease-in-out forwards;
-  animation-delay: 900ms; }
 #contact-me .show_envelope_bottom::before {
   border-bottom: 0vh solid #FFDECB;
   animation: showEnvelopeBottom 1000ms ease-in-out forwards;
   animation-delay: 4000ms; }
-#contact-me .show_envelope_bottom {
-  margin-top: 15vh;
-  animation: moveEnvelopeBottom 800ms ease-in-out forwards;
-  animation-delay: 3000ms; }
 #contact-me .envelope_box {
   position: absolute;
   left: 50%;

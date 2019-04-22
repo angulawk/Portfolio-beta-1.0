@@ -5,7 +5,6 @@
     position: relative;
     margin: 100px auto;
 
-
     @media(min-width: 600px) {
       width: 50vw;
     }
@@ -134,24 +133,14 @@
    }
 
    .hide_envelope_bottom::before {
+     top: 0;
      animation: hideEnvelopeBottom 1000ms ease-in-out forwards;
-   }
-
-   .hide_envelope_bottom {
-     animation: moveEnvelopeTop 800ms ease-in-out forwards;
-     animation-delay: 900ms;
    }
 
    .show_envelope_bottom::before {
      border-bottom: 0vh solid $lightorange;
      animation: showEnvelopeBottom 1000ms ease-in-out forwards;
      animation-delay: 4000ms;
-   }
-
-   .show_envelope_bottom {
-     margin-top: 15vh;
-     animation: moveEnvelopeBottom 800ms ease-in-out forwards;
-     animation-delay: 3000ms;
    }
 
    .envelope_box {
