@@ -61,6 +61,12 @@
       vertical-align: middle;
     }
 
+    td {
+      &:last-child {
+        display: none;
+      }
+    }
+
     .sort-table-arrows {
       margin-left: 10px;
     }

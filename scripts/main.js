@@ -24,8 +24,6 @@ import { arrayToSort, tableHead } from "./helpers/array-to-sort.js";
       imageHeight = parseInt(this.childNodes[1].height);
       const hiddenImageHeight = imageHeight - smallViewHeight;
       imageHeight = `-${hiddenImageHeight}px`;
-      console.log("imageHeight", imageHeight);
-      console.log("smallViewHeight", smallViewHeight);
       this.childNodes[1].style.top = imageHeight;
     });
 
@@ -54,11 +52,11 @@ import { arrayToSort, tableHead } from "./helpers/array-to-sort.js";
 
   window.addEventListener("scroll", function (e) {
     const menu = document.querySelector("#menu");
-    // if (window.scrollY > (menu.clientHeight / 2)) {
+    if (window.scrollY > (menu.clientHeight / 2)) {
       menu.classList.add("fixed");
-      // } else {
-      //   menu.classList.remove("fixed");
-      // }
+    } else {
+      menu.classList.remove("fixed");
+    }
   });
 
   //Active link
@@ -185,7 +183,7 @@ tableCreate();
         if (i === j) {
           sortableRow[j].children[0].innerHTML = arrayToSort[i].name;
           sortableRow[j].children[1].children[0].src = `images/${arrayToSort[i].image}.png`;
-          sortableRow[j].children[2].innerHTML = `${arrayToSort[i].experience} years`;
+          sortableRow[j].children[2].innerHTML = arrayToSort[i].experienceDescription;
         }
       }
     }
@@ -277,6 +275,7 @@ tableCreate();
     navLinks[i].addEventListener("click", (e) => {
       for(let j = 0; j < sections.length; j++) {
         e.preventDefault();
+
         if(i === j) {
           smoothScrollElem(sections[j]);
         }

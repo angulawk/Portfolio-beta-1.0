@@ -4,6 +4,17 @@ nav {
   min-height: 80px;
   height: 100%;
   width: 100%;
+  transition: all 0.3s ease-in-out;
+
+  &.fixed {
+    @media (min-width: 900px) {
+      position: fixed;
+      z-index: 999;
+      height: 80px;
+      width: 100%;
+      animation: smoothScroll 1s forwards;
+    }
+  }
 
   @media screen and (min-width: 900px) {
     max-height: 80px;

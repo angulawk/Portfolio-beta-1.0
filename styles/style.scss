@@ -11,13 +11,3 @@
 @import "sections/skills";
 @import "sections/experience";
 @import "sections/contact";
-
-.fixed {
-  @media (min-width: 768px) {
-    position: fixed;
-    z-index: 999;
-    height: 80px;
-    width: 100%;
-    animation: smoothScroll 1s forwards;
-  }
-}

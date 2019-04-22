@@ -258,7 +258,15 @@ nav {
   background: #E85359;
   min-height: 80px;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  transition: all 0.3s ease-in-out; }
+  @media (min-width: 900px) {
+    nav.fixed {
+      position: fixed;
+      z-index: 999;
+      height: 80px;
+      width: 100%;
+      animation: smoothScroll 1s forwards; } }
   @media screen and (min-width: 900px) {
     nav {
       max-height: 80px;
@@ -612,6 +620,8 @@ nav {
     padding: 10px 14px;
     position: relative;
     vertical-align: middle; }
+  #skills table td:last-child {
+    display: none; }
   #skills table .sort-table-arrows {
     margin-left: 10px; }
   #skills table .experience, #skills table .technology, #skills table .technology_name {
@@ -957,13 +967,5 @@ nav {
   top: 0;
   right: 0;
   padding: 15px; }
-
-@media (min-width: 768px) {
-  .fixed {
-    position: fixed;
-    z-index: 999;
-    height: 80px;
-    width: 100%;
-    animation: smoothScroll 1s forwards; } }
 
 /*# sourceMappingURL=style.css.map */
