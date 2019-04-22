@@ -620,8 +620,11 @@ nav {
     padding: 10px 14px;
     position: relative;
     vertical-align: middle; }
-  #skills table td:last-child {
-    display: none; }
+  #skills table td {
+    word-break: break-word;
+    text-align: center; }
+    #skills table td:last-child {
+      display: none; }
   #skills table .sort-table-arrows {
     margin-left: 10px; }
   #skills table .experience, #skills table .technology, #skills table .technology_name {
@@ -963,9 +966,11 @@ nav {
     text-transform: lowercase;
     color: #272626; }
 #contact-me .close_envelope {
+  cursor: pointer;
   position: absolute;
   top: 0;
   right: 0;
-  padding: 15px; }
+  padding: 15px;
+  font-size: 1.5rem; }
 
 /*# sourceMappingURL=style.css.map */

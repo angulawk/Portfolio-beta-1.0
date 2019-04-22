@@ -62,6 +62,8 @@
     }
 
     td {
+      word-break: break-word;
+      text-align: center;
       &:last-child {
         display: none;
       }

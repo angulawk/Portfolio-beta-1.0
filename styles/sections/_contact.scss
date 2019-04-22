@@ -244,9 +244,11 @@
   }
 
   .close_envelope {
+    cursor: pointer;
     position: absolute;
     top: 0;
     right: 0;
     padding: 15px;
+    font-size: 1.5rem;
   }
 }
