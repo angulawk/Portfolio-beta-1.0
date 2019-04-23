@@ -5,18 +5,17 @@
   }
 
   #timeline {
-    background-color: $orange;
-    height: 500px;
+    height: 300px;
     position: relative;
-    margin-top: 20px;
+    // margin-top: 20px;
     left: 30px;
-    width: 0;
-    z-index: 1;
-
-    @media(min-width: 768px) {
-      left: 70px;
-      width: 10px;
-    }
+    // width: 0;
+    // z-index: 1;
+    //
+    // @media(min-width: 768px) {
+    //   left: 70px;
+    //   width: 10px;
+    // }
 
   .inside {
     transition: height 0.3s ease-in-out;
@@ -50,15 +49,19 @@
     }
     &:nth-child(2) {
       left: -16px;
-      top: 65px;
+      top: 80px;
     }
     &:nth-child(3) {
       left: -16px;
-      top: 130px;
+      top: 160px;
     }
     &:nth-child(4) {
       left: -16px;
-      top: 195px;
+      top: 240px;
+    }
+    &:nth-child(5) {
+      left: -16px;
+      top: 320px;
     }
     &:hover {
       transform: scale(1.2);
@@ -70,12 +73,7 @@
       position: relative;
       text-align: center;
       left: 0;
-      top: -50px;
-
-      @media(min-width: 768px) {
-        left: -45px;
-        top: -20px;
-      }
+      top: -65px;
     }
     span {
       display: inline-block;
@@ -152,11 +150,7 @@
     top: 0;
     max-width: 960px;
     background-color: $white;
-    padding-left: 75px;
-
-    @media(min-width: 768px) {
-      padding-left: 95px;
-    }
+    padding-left: 100px;
 
     @media(min-width: 1024px) {
       padding-left: 130px;

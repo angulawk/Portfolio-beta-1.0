@@ -202,6 +202,11 @@ h6 {
     transform: translateY(-40px); }
   100% {
     transform: translateY(0px); } }
+@keyframes showNavigation {
+  0% {
+    position: fixed; }
+  100% {
+    position: static; } }
 @keyframes showEnvelopeTop {
   0% {
     border-bottom: 0vh solid #FFDECB;
@@ -259,7 +264,7 @@ nav {
   min-height: 80px;
   height: 100%;
   width: 100%;
-  transition: all 0.3s ease-in-out; }
+  animation: showNavigation 1s forwards; }
   @media (min-width: 900px) {
     nav.fixed {
       position: fixed;
@@ -645,17 +650,9 @@ nav {
   display: flex;
   justify-content: center; }
 #experience #timeline {
-  background-color: #E85359;
-  height: 500px;
+  height: 300px;
   position: relative;
-  margin-top: 20px;
-  left: 30px;
-  width: 0;
-  z-index: 1; }
-  @media (min-width: 768px) {
-    #experience #timeline {
-      left: 70px;
-      width: 10px; } }
+  left: 30px; }
   #experience #timeline .inside {
     transition: height 0.3s ease-in-out;
     position: absolute;
@@ -684,13 +681,16 @@ nav {
       top: 0px; }
     #experience #timeline .dot:nth-child(2) {
       left: -16px;
-      top: 65px; }
+      top: 80px; }
     #experience #timeline .dot:nth-child(3) {
       left: -16px;
-      top: 130px; }
+      top: 160px; }
     #experience #timeline .dot:nth-child(4) {
       left: -16px;
-      top: 195px; }
+      top: 240px; }
+    #experience #timeline .dot:nth-child(5) {
+      left: -16px;
+      top: 320px; }
     #experience #timeline .dot:hover {
       transform: scale(1.2); }
     #experience #timeline .dot date {
@@ -700,11 +700,7 @@ nav {
       position: relative;
       text-align: center;
       left: 0;
-      top: -50px; }
-      @media (min-width: 768px) {
-        #experience #timeline .dot date {
-          left: -45px;
-          top: -20px; } }
+      top: -65px; }
     #experience #timeline .dot span {
       display: inline-block;
       margin-top: 10px;
@@ -757,10 +753,7 @@ nav {
   top: 0;
   max-width: 960px;
   background-color: #FFFFFF;
-  padding-left: 75px; }
-  @media (min-width: 768px) {
-    #experience .modal_content {
-      padding-left: 95px; } }
+  padding-left: 100px; }
   @media (min-width: 1024px) {
     #experience .modal_content {
       padding-left: 130px; } }

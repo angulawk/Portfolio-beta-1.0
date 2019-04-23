@@ -4,7 +4,7 @@ nav {
   min-height: 80px;
   height: 100%;
   width: 100%;
-  transition: all 0.3s ease-in-out;
+  animation: showNavigation 1s forwards;
 
   &.fixed {
     @media (min-width: 900px) {
