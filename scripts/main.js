@@ -1,6 +1,10 @@
 import { showElementOnClick } from "./helpers/show-element-on-click.js";
 import { sortTable, sortNumber } from "./helpers/sort-table.js";
 import { arrayToSort, tableHead } from "./helpers/array-to-sort.js";
+import { createTable } from "./helpers/create-table.js";
+import { smoothScrollElem } from "./helpers/smooth-scroll.js";
+import { addArrow } from "./helpers/add-arrow.js";
+import { sortRow } from "./helpers/sort-row.js";
 
 (function() {
   //Toggle navigation
@@ -86,141 +90,32 @@ import { arrayToSort, tableHead } from "./helpers/array-to-sort.js";
 
   showElementOnClick(workplaceName, workplaceDescription);
 
-//Create table
-
-function tableCreate() {
-  let table = document.querySelector("#technology-stack-table");
-  table.setAttribute("border", "1");
-  let thead = document.createElement("thead");
-  let tbody = document.createElement("tbody");
-  let headingRow = document.createElement("tr");
-
-  for(let i = 0; i < tableHead.length; i++) {
-    thead.appendChild(headingRow);
-    let th = document.createElement("th");
-    th.innerHTML = tableHead[i].title;
-    th.classList.add(tableHead[i].class)
-    headingRow.appendChild(th);
-
-    if(tableHead[i].title === "Name") {
-      let a = document.createElement("a");
-      th.appendChild(a);
-      let i = document.createElement("i");
-      i.classList.add("fa");
-      i.classList.add("sort_direction_icon");
-      i.classList.add("fa-angle-down");
-      a.appendChild(i);
-    }
-
-    if(tableHead[i].title === "Experience") {
-      let a = document.createElement("a");
-      th.appendChild(a);
-      let i = document.createElement("i");
-      i.classList.add("fa");
-      i.classList.add("sort_direction_icon");
-      a.appendChild(i);
-    }
-  }
-
-  for (let i = 0; i < arrayToSort.length; i++) {
-    let tr = document.createElement("tr");
-    tbody.appendChild(tr);
-    tr.classList.add("sortable_row");
-
-    for (let key in arrayToSort[i]) {
-      if (key === "name") {
-        let technologyNameDesc = document.createElement("td");
-        technologyNameDesc.innerHTML = arrayToSort[i].name;
-        technologyNameDesc.classList.add("technology_name_desc");
-
-        tr.appendChild(technologyNameDesc);
-      } else if (key === "image") {
-        let imageData = document.createElement("td");
-        let img = document.createElement("img");
-        img.src = `images/${arrayToSort[i].name}.png`;
-        imageData.appendChild(img);
-
-        tr.appendChild(imageData);
-      } else {
-        let experienceTime = document.createElement("td");
-        experienceTime.innerHTML = arrayToSort[i].experience;
-        experienceTime.classList.add("experience_time");
-
-        tr.appendChild(experienceTime);
-
-      }
-    }
-  }
-  table.appendChild(thead);
-  table.appendChild(tbody);
-}
-tableCreate();
-
   //Sort array
+  let table = document.querySelector("#technology-stack-table");
+  createTable(table);
 
   let order = "desc";
   const sortDirectionIcon = document.querySelector(".sort_direction_icon");
   const sortableRow = document.querySelectorAll(".sortable_row");
 
-  const technologyNameSort = document.querySelector(".technology_name a .sort_direction_icon");
-  const experienceSort = document.querySelector(".experience a .sort_direction_icon");
-
   const technologyName = document.querySelector(".technology_name");
   const experience = document.querySelector(".experience");
+  const technologyNameSort = document.querySelector(".technology_name a .sort_direction_icon");
+  const experienceSort = document.querySelector(".experience a .sort_direction_icon");
   let direction = order === "asc" ? "up" : "down";
   sortRow(order, "name");
 
-  function sortRow(order, keyToCompare) {
-    if (keyToCompare === "experience") {
-      sortNumber(keyToCompare, arrayToSort, order);
-    } else {
-      sortTable(keyToCompare, arrayToSort, order);
-    }
-    const sortableRow = document.querySelectorAll(".sortable_row");
-
-    for(let i = 0; i < arrayToSort.length; i++) {
-      for (let j = 0; j < sortableRow.length; j++) {
-        if (i === j) {
-          sortableRow[j].children[0].innerHTML = arrayToSort[i].name;
-          sortableRow[j].children[1].children[0].src = `images/${arrayToSort[i].image}.png`;
-          sortableRow[j].children[2].innerHTML = arrayToSort[i].experienceDescription;
-        }
-      }
-    }
-  }
-
-  function cleanClass(clickedElem) {
-    if (clickedElem.classList.contains("fa-angle-up")) {
-      clickedElem.classList.remove(`fa-angle-up`);
-    } else if (clickedElem.classList.contains("fa-angle-down")) {
-      clickedElem.classList.remove(`fa-angle-down`);
-    }
-  }
 
   technologyName.addEventListener("click", () => {
-    order = (order === "asc") ? order = "desc" : order = "asc";
-    let direction = order === "asc" ? "up" : "down";
+    (order === "asc") ? order = "desc" : order = "asc";
 
-    cleanClass(technologyNameSort);
-    cleanClass(experienceSort);
-
-    technologyNameSort.classList.add(`fa-angle-${direction}`);
-    experienceSort.classList.remove(`fa-angle-${direction}`);
-
-    sortRow(order, "name");
+    addArrow(technologyNameSort, experienceSort, "name", order);
   });
 
   experience.addEventListener("click", () => {
-    order = (order === "asc") ? order = "desc" : order = "asc";
-    let direction = order === "asc" ? "up" : "down";
+    (order === "asc") ? order = "desc" : order = "asc";
 
-    cleanClass(technologyNameSort);
-    cleanClass(experienceSort);
-
-    experienceSort.classList.add(`fa-angle-${direction}`);
-    technologyNameSort.classList.remove(`fa-angle-${direction}`);
-
-    sortRow(order, "experience");
+    addArrow(experienceSort, technologyNameSort, "experience", order);
   });
 
   //Show contact details
@@ -257,16 +152,6 @@ tableCreate();
       openContactBoxBtn.style.opacity = "1";
     }, 5000);
   });
-
-  //smooth scroll
-
-  function smoothScrollElem(element) {
-    window.scrollTo({
-      "behavior": "smooth",
-      "left": 0,
-      "top": element.offsetTop - 75
-    });
-  }
 
   const navLinks = document.querySelectorAll(".menu_link");
   const sections = document.querySelectorAll(".smooth_scroll_section");
