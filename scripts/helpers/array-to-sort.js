@@ -77,8 +77,8 @@ export const arrayToSort = [
   {
     name: "Docker",
     image: "docker",
-    experience: 2,
-    experienceDescription: "2 years"
+    experience: 1,
+    experienceDescription: "1 year"
   },
   {
     name: "Postman",
