@@ -65,16 +65,16 @@ import { sortRow } from "./helpers/sort-row.js";
 
   //Active link
 
-  const linksList = document.querySelectorAll(".links li a");
-
-  linksList.forEach(item => {
-    item.addEventListener("click", function () {
-      linksList.forEach(element => {
-        element.classList.remove("active_link");
-      });
-      item.classList.add("active_link");
-    });
-  });
+  // const linksList = document.querySelectorAll(".links li a");
+  //
+  // linksList.forEach(item => {
+  //   item.addEventListener("click", function () {
+  //     linksList.forEach(element => {
+  //       element.classList.remove("active_link");
+  //     });
+  //     item.classList.add("active_link");
+  //   });
+  // });
 
   //Timeline animation
 
@@ -167,4 +167,72 @@ import { sortRow } from "./helpers/sort-row.js";
       }}
     );
   }
+
+  let linksList = document.querySelectorAll(".links li a");
+
+  linksList.forEach(item => {
+    item.addEventListener("click", function () {
+      linksList.forEach(element => {
+        element.classList.remove("active_link");
+      });
+      item.classList.add("active_link");
+    });
+  });
+
+  let scrolledElem;
+
+  // function getOffset(el) {
+  //   const rect = el.getBoundingClientRect();
+  //   return {
+  //     left: rect.left + window.scrollX,
+  //     top: rect.top + window.scrollY
+  //   };
+  // }
+
+  function isInView(elem){
+   return document.querySelector(elem).offset().top - window.scrollTop() < document.querySelector(elem).height() ;
+ }
+
+  window.addEventListener("scroll", (e) => {
+    linksList.forEach(element => {
+      element.classList.remove("active_link");
+    });
+
+    // const portfolio = document.querySelector("#portfolio").getBoundingClientRect();
+    const anchorHref = document.querySelectorAll(".menu_link");
+    let scrolledElem;
+
+    sections.forEach(section => {
+      let sectionHeight = 0;
+      // let bodyRect = document.body.getBoundingClientRect(),
+      //   sectionClientRect = section.getBoundingClientRect(),
+      //   offset = sectionClientRect.top - bodyRect.top;
+      let sectionId = section.id;
+
+      sectionHeight += section.clientHeight;
+
+      console.log("sectionHeight", sectionHeight);
+      console.log("window.scrollY", window.scrollY);
+
+      if(sectionHeight >= window.scrollY) {
+        scrolledElem = `${sectionId}`;
+      }
+    });
+
+    // if(portfolio.height > Math.abs(portfolio.top)) {
+    //   scrolledElem = "portfolio";
+    // }
+
+    linksList.forEach(element => {
+      element.classList.remove("active_link");
+    });
+
+    anchorHref.forEach(item => {
+      let editedHref = item.href.slice(item.href.indexOf("#"), item.href.length);
+
+      if(editedHref === `#${scrolledElem}`) {
+        item.classList.add("active_link");
+      }
+    })
+  })
 })();
